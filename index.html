@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mauro Silva Studio — Desenvolvimento Web e WordPress</title>
+<meta name="description" content="Desenvolvimento web personalizado: sistemas, websites corporativos, e-commerces e arquitetura WordPress especializada. Parceiro white-label para agências.">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://maurosilvastudio.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Mauro Silva Studio — Desenvolvimento Web e WordPress">
+<meta property="og:description" content="Sistemas, websites corporativos, e-commerces e arquitetura WordPress especializada. Parceiro white-label para agências.">
+<meta property="og:url" content="https://maurosilvastudio.com.br/">
+<meta property="og:image" content="https://maurosilvastudio.com.br/assets/media/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mauro Silva Studio — Desenvolvimento Web e WordPress">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://maurosilvastudio.com.br/assets/media/og-image.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111'/%3E%3Cpath d='M7 24V8h3l6 9 6-9h3v16h-3V14l-6 9-6-9v10z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Mauro Silva Studio","url":"https://maurosilvastudio.com.br/","email":"contato@maurosilvastudio.com.br","telephone":"+5598987316362","description":"Desenvolvimento web personalizado: sistemas, websites corporativos, e-commerces e arquitetura WordPress. Parceiro white-label para agências.","areaServed":"BR","knowsAbout":["WordPress","React","TypeScript","WooCommerce","Headless CMS","Node.js"]}</script>
+<style>
+:root{--ink:#111;--muted:#666;--line:#e5e5e5;--soft:#f6f6f6;--ease:cubic-bezier(.16,1,.3,1);--hh:72px;--pad:clamp(24px,5vw,64px)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hh) + 16px);scrollbar-gutter:stable;-webkit-text-size-adjust:100%}
+html.modal-open{overflow:hidden}
+body{margin:0;min-height:100dvh;display:flex;flex-direction:column;font-family:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:clip}
+main{flex:1}
+h1,h2,h3,p,dl,dd{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding-inline:var(--pad)}
+.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--ink);color:#fff;padding:12px 18px;font-size:14px;transition:top .2s}
+.skip:focus{top:16px}
+.label{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#777;line-height:1.7}
+/* header */
+.hdr{position:sticky;top:0;z-index:40;height:var(--hh);background:rgba(255,255,255,.86);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.hdr.is-scrolled{border-color:var(--line)}
+.hdr .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:clamp(1.1rem,2.2vw,1.5rem);letter-spacing:-.02em;text-decoration:none}
+.nav{display:flex;gap:clamp(24px,4vw,48px);font-size:14px;font-weight:500}
+.nav a{text-decoration:none;color:#555;position:relative;padding:6px 0;transition:color .2s}
+.nav a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.nav a:hover,.nav a[aria-current]{color:var(--ink)}
+.nav a:hover::after,.nav a[aria-current]::after{transform:scaleX(1);transform-origin:left}
+.burger{display:none;width:44px;height:44px;margin-right:-10px;place-items:center}
+.burger i{display:block;width:22px;height:2px;background:var(--ink);position:relative;transition:background .2s}
+.burger i::before,.burger i::after{content:'';position:absolute;left:0;width:22px;height:2px;background:var(--ink);transition:transform .35s var(--ease)}
+.burger i::before{top:-7px}.burger i::after{top:7px}
+.burger[aria-expanded=true] i{background:transparent}
+.burger[aria-expanded=true] i::before{transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] i::after{transform:translateY(-7px) rotate(-45deg)}
+.mnav{display:none}
+@media(max-width:639px){
+.nav{display:none}.burger{display:grid}
+.mnav{display:grid;position:fixed;inset:var(--hh) 0 auto 0;z-index:39;background:#fff;border-bottom:1px solid var(--line);padding:8px var(--pad) 20px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:transform .4s var(--ease),opacity .25s,visibility .4s}
+.mnav.is-open{transform:none;opacity:1;visibility:visible}
+.mnav a{padding:16px 0;font-size:20px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+}
+/* hero */
+.hero{display:grid;gap:32px;padding:clamp(48px,9vw,112px) 0 clamp(64px,9vw,112px)}
+.hero h1{font-size:clamp(1.5rem,1rem + 1.7vw,2.5rem);font-weight:400;line-height:1.25;letter-spacing:-.02em;max-width:34ch}
+.hero>*{animation:rise .9s var(--ease) both}.hero h1{animation-delay:.12s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+@media(min-width:1024px){.hero{grid-template-columns:repeat(12,1fr);gap:48px}.hero .label{grid-column:span 4}.hero h1{grid-column:span 8;max-width:none}}
+/* studio */
+.bar{position:sticky;top:var(--hh);z-index:30;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid #efefef;padding:16px 0;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12px;font-weight:600;padding:9px 16px;border:1px solid var(--line);border-radius:99px;color:#444;transition:background .25s,color .25s,border-color .25s}
+.chip small{font-size:inherit;opacity:.55;margin-left:4px}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.search{position:relative;width:100%;max-width:280px}
+.search svg{position:absolute;left:14px;top:50%;width:14px;height:14px;transform:translateY(-50%);color:#999;pointer-events:none}
+.search input{width:100%;font:inherit;font-size:13px;padding:11px 16px 11px 38px;border:1px solid var(--line);border-radius:99px;background:var(--soft);transition:border-color .2s,background .2s}
+.search input:focus{outline:0;border-color:var(--ink);background:#fff}
+.status{font-size:12px;color:var(--muted);padding:20px 0 0;min-height:40px}
+.grid{display:grid;gap:clamp(40px,5vw,64px) clamp(24px,4vw,56px);padding:20px 0 clamp(80px,10vw,140px);transition:opacity .16s,transform .16s}
+@media(min-width:768px){.grid{grid-template-columns:1fr 1fr}}
+.grid.is-filtering{opacity:0;transform:translateY(8px)}
+.grid.is-entering .card:not([hidden]){animation:rise .55s var(--ease) both;animation-delay:calc(var(--i,0)*35ms)}
+.card[hidden]{display:none}
+.card__media{display:grid;place-items:center;width:100%;aspect-ratio:16/10;padding:clamp(20px,4vw,40px);background:var(--bg);position:relative;overflow:hidden;cursor:pointer;text-align:left}
+.frame{width:100%;height:100%;border-radius:4px;overflow:hidden;box-shadow:0 24px 48px -16px rgba(0,0,0,.45);outline:1px solid rgba(255,255,255,.12);outline-offset:-1px;background:rgba(0,0,0,.25);position:relative}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .9s var(--ease)}
+.card__media:hover .frame img{transform:scale(1.035)}
+.frame.is-fallback img{display:none}
+.frame.is-fallback::after{content:attr(data-name);position:absolute;inset:0;display:grid;place-items:center;padding:16px;color:#fff;font-weight:700;font-size:15px;text-align:center}
+.badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:5px 9px;border-radius:3px}
+.card h3{font-size:1.25rem;font-weight:600;letter-spacing:-.01em;margin-top:20px}
+.card p{font-size:13.5px;line-height:1.5;color:var(--muted);margin-top:6px}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:13px 16px;font-size:13px;font-weight:600;border:1px solid var(--line);text-decoration:none;text-align:center;transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn--solid{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn--solid:hover{background:#333;border-color:#333}
+.btn svg{width:12px;height:12px}
+.empty{padding:80px 0;text-align:center;color:var(--muted);font-size:14px}
+.empty button{margin-top:16px;text-decoration:underline;text-underline-offset:4px;font-weight:600;color:var(--ink)}
+.empty[hidden]{display:none}
+/* sobre / contato */
+.sec{border-top:1px solid var(--line);padding:clamp(64px,9vw,112px) 0}
+.about{display:grid;gap:40px;margin-top:8px}
+.about figure{margin:0}
+.about img{width:100%;max-width:340px;aspect-ratio:4/5;max-height:420px;object-fit:cover;object-position:50% 15%;background:var(--soft)}
+.about figcaption{font-size:13px;color:#777;margin-top:14px}
+@media(min-width:1024px){.about{grid-template-columns:340px 1fr;gap:96px;align-items:start}.about figure{position:sticky;top:calc(var(--hh) + 32px)}}
+.nums{display:grid;gap:32px;margin:clamp(56px,7vw,96px) 0 0;padding-top:32px;border-top:1px solid var(--line)}
+@media(min-width:640px){.nums{grid-template-columns:repeat(3,1fr);gap:48px}}
+.nums dt,.mnums dt{font-size:clamp(2.75rem,2rem + 4vw,5rem);font-weight:600;letter-spacing:-.04em;line-height:1}
+.nums dd{margin-top:10px;font-size:14px;color:#666;line-height:1.5;max-width:24ch}
+.quotes{display:grid;gap:clamp(32px,4vw,56px);margin-top:40px}
+@media(min-width:900px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.q{margin:0;border-top:2px solid var(--ink);padding-top:24px;display:flex;flex-direction:column;gap:24px}
+.q p{font-size:clamp(1.05rem,1rem + .4vw,1.25rem);line-height:1.55;letter-spacing:-.01em}
+.q footer{margin-top:auto;font-size:13px;color:#666;line-height:1.5}.q footer strong{display:block;color:var(--ink);font-size:14px}
+.q--demo p::before{content:'Exemplo de layout — ';color:#b00;font-weight:700}
+h2.t{font-size:clamp(1.9rem,1.2rem + 2.6vw,3rem);font-weight:500;letter-spacing:-.025em;line-height:1.1;margin-bottom:32px}
+.lead{font-size:clamp(1.05rem,1rem + .4vw,1.25rem);line-height:1.6;margin-bottom:20px;max-width:60ch}
+.body{color:#555;line-height:1.7;margin-bottom:32px;max-width:62ch}
+.svc{display:grid;gap:28px;border-top:1px solid var(--line);padding-top:28px}
+@media(min-width:640px){.svc{grid-template-columns:1fr 1fr}}
+.svc h3{font-size:15px;font-weight:700;margin-bottom:8px}
+.svc p{font-size:14px;line-height:1.65;color:#666}
+.about .btn,.cta{margin-top:36px;display:inline-flex;padding:16px 26px}
+
+/* stack strip */
+.stack-strip{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px;padding-top:0}
+.stack-strip span{font-size:12px;font-weight:600;padding:7px 14px;background:var(--soft);border:1px solid var(--line);border-radius:99px;color:#333}
+
+/* agencies section */
+.agencies-grid{display:grid;gap:20px;margin-bottom:40px}
+@media(min-width:640px){.agencies-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.agencies-grid{grid-template-columns:repeat(4,1fr)}}
+.ag-block{position:relative;border:1px solid var(--line);padding:28px 24px;background:#fff;transition:border-color .3s,transform .5s var(--ease)}
+.ag-block:hover{border-color:var(--ink);transform:translateY(-3px)}
+.ag-block h3{font-size:15px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em;position:relative;z-index:1;}
+.ag-block p{font-size:14px;line-height:1.6;color:#555;position:relative;z-index:1;}
+.ag-num{position:absolute;top:20px;right:24px;font-size:2.5rem;font-weight:300;color:var(--line);line-height:1;z-index:0;transition:color .3s;}
+.ag-block:hover .ag-num{color:#ccc;}
+.ag-note{padding:24px;background:var(--soft);border-left:2px solid var(--ink);font-size:15px;line-height:1.6;color:#333;margin-bottom:32px}
+.ag-note strong{font-weight:700}
+
+/* contact block */
+.contact-grid{display:grid;gap:16px;margin-top:32px;max-width:640px}
+@media(min-width:640px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact-card{display:flex;flex-direction:column;gap:6px;padding:22px;border:1px solid var(--line);text-decoration:none;transition:border-color .25s,background .25s}
+.contact-card:hover{border-color:var(--ink);background:var(--soft)}
+.contact-card .cc-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#888}
+.contact-card .cc-value{font-size:16px;font-weight:600;color:var(--ink);word-break:break-word}
+.contact-card .cc-hint{font-size:13px;color:#777;margin-top:2px}
+
+.contact-links{display:grid;gap:8px;margin-top:40px}
+.contact-links a{font-size:clamp(1.25rem,.8rem + 2.2vw,2.25rem);font-weight:600;letter-spacing:-.02em;text-decoration:none;width:fit-content;max-width:100%;overflow-wrap:anywhere;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;padding-bottom:4px;transition:background-size .45s var(--ease),opacity .2s}
+.contact-links a:hover{background-size:0 1px;background-position:100% 100%;opacity:.7}
+.q--tpl p{color:#8a8a8a}.subt{font-size:clamp(1.4rem,1.1rem + 1.2vw,2rem);font-weight:600;letter-spacing:-.02em;margin:clamp(56px,7vw,96px) 0 24px}
+.recs{display:grid;gap:20px}@media(min-width:900px){.recs{grid-template-columns:repeat(3,1fr)}}.rec{flex-direction:column}
+.rec{display:flex;gap:18px;align-items:flex-start;padding:24px;background:var(--soft);border:1px solid var(--line)}
+.rec__av{flex:none;width:48px;height:48px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
+.rec__t{font-size:15px;line-height:1.65;color:#444}.rec__a{margin-top:12px;font-size:13px;color:#777}.rec__a strong{color:var(--ink)}
+/* footer */
+.ftr{border-top:1px solid var(--line);padding:clamp(40px,6vw,72px) 0 28px}
+.mark{display:block;overflow:hidden;white-space:nowrap;line-height:.85}
+.mark span{display:inline-block;font-weight:800;letter-spacing:-.04em;font-size:clamp(1.5rem,8vw,6.5rem)}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:32px;font-size:12px;color:#777}
+/* modal */
+dialog{padding:0;border:0;background:#fff;color:var(--ink);width:min(1120px,calc(100% - 48px));max-width:none;height:min(760px,calc(100dvh - 48px));max-height:none;overflow:hidden;opacity:0;transform:translateY(18px) scale(.985);transition:opacity .28s ease,transform .45s var(--ease);box-shadow:0 40px 100px -20px rgba(0,0,0,.5)}
+dialog.is-open{opacity:1;transform:none}
+dialog::backdrop{background:rgba(10,10,10,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .28s}
+dialog.is-open::backdrop{opacity:1}
+.shell{display:grid;height:100%}
+@media(min-width:900px){.shell{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}.panel{overflow-y:auto;overscroll-behavior:contain;height:100%}}
+.mm{display:grid;place-items:center;padding:clamp(24px,4vw,48px);background:var(--bg);transition:background-color .5s}
+.mm .frame{aspect-ratio:16/10;height:auto;max-height:100%}
+.mm .frame img{opacity:0;transition:opacity .4s}
+.mm .frame img.is-ready{opacity:1}
+.panel{padding:clamp(28px,4vw,48px);padding-top:clamp(72px,8vw,84px);display:flex;flex-direction:column;min-height:min-content;transition:opacity .14s,transform .14s}
+.panel.is-swapping{opacity:0;transform:translateY(6px)}
+.pos{font-size:12px;color:#777;font-variant-numeric:tabular-nums; margin-bottom: 8px;}
+.panel h2{font-size:clamp(1.9rem,1.2rem + 2.4vw,3rem);font-weight:600;letter-spacing:-.025em;line-height:1.05;margin:0 0 14px}
+.panel .sub{color:#555;line-height:1.55;font-size:1.0625rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:20px;border-block:1px solid var(--line);padding:20px 0;margin:28px 0}
+.facts dt{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
+.facts dd{font-size:14px;font-weight:500;overflow-wrap:anywhere}
+.ctx{color:#555;line-height:1.7;font-size:14.5px;margin-bottom:28px}
+.ctx[hidden],.mh[hidden],.stack[hidden],.mq[hidden]{display:none}
+.mh{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:10px}
+.mnums[hidden]{display:none}.mnums{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 28px}
+.mnums dt{font-size:clamp(1.9rem,1.3rem + 1.6vw,2.75rem)}.mnums dd{margin-top:6px;font-size:12px;color:#666;line-height:1.4}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}.stack span{font-size:12px;font-weight:600;padding:6px 12px;background:var(--soft);border-radius:99px}
+.mq{margin:0 0 28px;padding:4px 0 4px 18px;border-left:2px solid var(--ink)}.mq p{font-size:1.05rem;line-height:1.55}.mq footer{margin-top:10px;font-size:13px;color:#666}
+.agency{background:var(--ink);color:#fff;padding:22px;margin:auto 0 16px;display:grid;gap:14px; width: 100%;}
+.agency p{font-size:15px;line-height:1.5;font-weight:500}
+.agency .btn{border-color:#fff;color:#fff;justify-self:start}.agency .btn:hover{background:#fff;color:var(--ink)}
+.panel .cta{margin-top:0;width:100%;justify-content:center}
+.ctl{position:absolute;top:16px;right:16px;z-index:5;display:flex;gap:8px}
+.ctl button{width:44px;height:44px;display:grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.12);transition:transform .25s var(--ease),background .2s,color .2s}
+.ctl button:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:scale(1.06)}
+.ctl svg{width:18px;height:18px}
+@media(max-width:899px){
+dialog{width:100%;height:94dvh;margin:auto 0 0;transform:translateY(40px)}
+.shell{overflow-y:auto;overscroll-behavior:contain;align-content:start}
+.mm{padding:20px;padding-top:68px}
+.panel{overflow:visible;padding-top:28px}
+.facts{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+}
+</style>
+<noscript><style>[data-open]{display:none}.card__media{pointer-events:none}.acts{grid-template-columns:1fr}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#studio">Ir para o conteúdo</a>
+<header class="hdr" id="hdr"><div class="wrap">
+<a class="logo" href="#inicio" aria-label="MAUROSILVASTUDIO — início">MAUROSILVASTUDIO</a>
+<nav class="nav" aria-label="Principal"><a href="#inicio">Início</a><a href="#studio">Studio</a><a href="#agencias">Agências</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+<button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Abrir menu"><i></i></button>
+</div></header>
+<nav class="mnav" id="mnav" aria-label="Menu mobile"><a href="#inicio">Início</a><a href="#studio">Studio</a><a href="#agencias">Agências</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+
+<main>
+<div class="wrap">
+<section id="inicio" class="hero">
+<p class="label">Web Development<br>Mauro Silva Studio<br>62.648.674/0001-54</p>
+<h1>Desenvolvimento web sob medida para empresas: sistemas, websites corporativos, e-commerces e soluções especializadas.</h1>
+</section>
+<section id="studio" aria-label="Projetos">
+<div class="bar">
+<div class="chips" id="chips" role="group" aria-label="Filtrar por agência"><button type="button" class="chip" data-filter="all" aria-pressed="true">Todos<small>35</small></button><button type="button" class="chip" data-filter="WayShip Creative" aria-pressed="false">WayShip Creative<small>24</small></button><button type="button" class="chip" data-filter="Designaria" aria-pressed="false">Designaria<small>2</small></button><button type="button" class="chip" data-filter="DRNT" aria-pressed="false">DRNT<small>1</small></button><button type="button" class="chip" data-filter="Tunnel" aria-pressed="false">Tunnel<small>7</small></button><button type="button" class="chip" data-filter="Garowa" aria-pressed="false">Garowa<small>1</small></button></div>
+<label class="search"><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar projeto</span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 21l-4.3-4.3M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z"/></svg>
+<input type="search" id="q" placeholder="Buscar projeto..." autocomplete="off"></label>
+</div>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+<div class="grid" id="grid">
+<article class="card" data-id="01-aap-sjc" data-agency="WayShip Creative" data-search="aap sjc associacao dos aposentados e pensionistas de sao jose dos campos wayship creative institucional / ong">
+<button type="button" class="card__media" style="--bg:#4069E1" data-open="01-aap-sjc" aria-label="Ver detalhes de AAP SJC"><span class="frame" data-name="AAP SJC"><img src="assets/media/01-aap-sjc.png" alt="Captura do site AAP SJC" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>AAP SJC</h3><p>Associação dos Aposentados e Pensionistas de São José dos Campos</p>
+<div class="acts"><a class="btn" href="https://aapsjc.org.br" target="_blank" rel="noopener noreferrer" aria-label="Website de AAP SJC (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="01-aap-sjc">Detalhes</button></div>
+</article>
+<article class="card" data-id="02-agr-consultores" data-agency="WayShip Creative" data-search="agr consultores consultoria estrategica financeira e tributaria no brasil wayship creative consultoria / corporativo">
+<button type="button" class="card__media" style="--bg:#A1CD46" data-open="02-agr-consultores" aria-label="Ver detalhes de AGR Consultores"><span class="frame" data-name="AGR Consultores"><img src="assets/media/02-agr-consultores.png" alt="Captura do site AGR Consultores" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>AGR Consultores</h3><p>Consultoria Estratégica Financeira e Tributária no Brasil</p>
+<div class="acts"><a class="btn" href="https://agrconsultores.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="Website de AGR Consultores (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="02-agr-consultores">Detalhes</button></div>
+</article>
+<article class="card" data-id="11-altwin" data-agency="WayShip Creative" data-search="altwin solucoes corporativas em tecnologia e infraestrutura wayship creative tecnologia / b2b">
+<button type="button" class="card__media" style="--bg:#244b61" data-open="11-altwin" aria-label="Ver detalhes de Altwin"><span class="frame" data-name="Altwin"><img src="assets/media/11-altwin.png" alt="Captura do site Altwin" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Altwin</h3><p>Soluções Corporativas em Tecnologia e Infraestrutura</p>
+<div class="acts"><a class="btn" href="https://altwin.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Altwin (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="11-altwin">Detalhes</button></div>
+</article>
+<article class="card" data-id="04-amora-os-pedacos" data-agency="WayShip Creative" data-search="amor aos pedacos confeitaria artesanal e experiencias gastronomicas wayship creative gastronomia / e-commerce">
+<button type="button" class="card__media" style="--bg:#874d5c" data-open="04-amora-os-pedacos" aria-label="Ver detalhes de Amor aos Pedaços"><span class="frame" data-name="Amor aos Pedaços"><img src="assets/media/04-amora-os-peda-os.png" alt="Captura do site Amor aos Pedaços" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Amor aos Pedaços</h3><p>Confeitaria Artesanal e Experiências Gastronômicas</p>
+<div class="acts"><a class="btn" href="https://amoraospedacos.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Amor aos Pedaços (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="04-amora-os-pedacos">Detalhes</button></div>
+</article>
+<article class="card" data-id="38-atelie-casa" data-agency="WayShip Creative" data-search="atelie casa estudio de design de interiores wayship creative design / interiores">
+<button type="button" class="card__media" style="--bg:#273746" data-open="38-atelie-casa" aria-label="Ver detalhes de Ateliê Casa"><span class="frame" data-name="Ateliê Casa"><img src="assets/media/38-atelie-casa.png" alt="Captura do site Ateliê Casa" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Ateliê Casa</h3><p>Estúdio de design de interiores</p>
+<div class="acts"><a class="btn" href="https://ateliecasa.com" target="_blank" rel="noopener noreferrer" aria-label="Website de Ateliê Casa (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="38-atelie-casa">Detalhes</button></div>
+</article>
+<article class="card" data-id="03-bep-energia" data-agency="Designaria" data-search="bep energia gestao otimizada e mercado livre de energia designaria energia / b2b">
+<button type="button" class="card__media" style="--bg:#FF9D00" data-open="03-bep-energia" aria-label="Ver detalhes de BEP Energia"><span class="frame" data-name="BEP Energia"><img src="assets/media/03-bep-energia.png" alt="Captura do site BEP Energia" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">Designaria</span></button>
+<h3>BEP Energia</h3><p>Gestão Otimizada e Mercado Livre de Energia</p>
+<div class="acts"><a class="btn" href="https://bepenergia.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="Website de BEP Energia (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="03-bep-energia">Detalhes</button></div>
+</article>
+<article class="card" data-id="06-cablie" data-agency="WayShip Creative" data-search="cablie solucoes industriais em cabos e condutores eletricos wayship creative industria / cabos">
+<button type="button" class="card__media" style="--bg:#2c333a" data-open="06-cablie" aria-label="Ver detalhes de Cablie"><span class="frame" data-name="Cablie"><img src="assets/media/06-cablie.png" alt="Captura do site Cablie" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Cablie</h3><p>Soluções Industriais em Cabos e Condutores Elétricos</p>
+<div class="acts"><a class="btn" href="https://cablie.com" target="_blank" rel="noopener noreferrer" aria-label="Website de Cablie (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="06-cablie">Detalhes</button></div>
+</article>
+<article class="card" data-id="08-cabr-cabos" data-agency="WayShip Creative" data-search="cabr cabos solucoes industriais em cabos e condutores eletricos wayship creative industria / eletricidade">
+<button type="button" class="card__media" style="--bg:#243746" data-open="08-cabr-cabos" aria-label="Ver detalhes de CABR Cabos"><span class="frame" data-name="CABR Cabos"><img src="assets/media/08-cabrcabos.png" alt="Captura do site CABR Cabos" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>CABR Cabos</h3><p>Soluções Industriais em Cabos e Condutores Elétricos</p>
+<div class="acts"><a class="btn" href="https://cabrcabos.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de CABR Cabos (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="08-cabr-cabos">Detalhes</button></div>
+</article>
+<article class="card" data-id="09-cofibam" data-agency="WayShip Creative" data-search="cofibam fabricacao de cabos especiais e fios de alta performance wayship creative industria / manufatura">
+<button type="button" class="card__media" style="--bg:#1d2228" data-open="09-cofibam" aria-label="Ver detalhes de Cofibam"><span class="frame" data-name="Cofibam"><img src="assets/media/09-cofibam.png" alt="Captura do site Cofibam" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Cofibam</h3><p>Fabricação de Cabos Especiais e Fios de Alta Performance</p>
+<div class="acts"><a class="btn" href="https://cofibam.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Cofibam (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="09-cofibam">Detalhes</button></div>
+</article>
+<article class="card" data-id="32-conahp-2026" data-agency="Tunnel" data-search="conahp 2026 congressos nacional de hospitais privados da anahp tunnel eventos / hospitalar">
+<button type="button" class="card__media" style="--bg:#217462" data-open="32-conahp-2026" aria-label="Ver detalhes de CONAHP 2026"><span class="frame" data-name="CONAHP 2026"><img src="assets/media/32-conahp-2026.png" alt="Captura do site CONAHP 2026" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">Tunnel</span></button>
+<h3>CONAHP 2026</h3><p>Congressos Nacional de Hospitais Privados da Anahp</p>
+<div class="acts"><a class="btn" href="https://conahp.org.br/2026" target="_blank" rel="noopener noreferrer" aria-label="Website de CONAHP 2026 (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="32-conahp-2026">Detalhes</button></div>
+</article>
+<article class="card" data-id="13-drago-specialty" data-agency="WayShip Creative" data-search="drago specialty empresa de especialidades quimicas wayship creative industria / quimica">
+<button type="button" class="card__media" style="--bg:#7a3928" data-open="13-drago-specialty" aria-label="Ver detalhes de Drago Specialty"><span class="frame" data-name="Drago Specialty"><img src="assets/media/13-drago-specialty.png" alt="Captura do site Drago Specialty" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Drago Specialty</h3><p>Empresa de especialidades químicas</p>
+<div class="acts"><a class="btn" href="https://dragospecialty.com" target="_blank" rel="noopener noreferrer" aria-label="Website de Drago Specialty (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="13-drago-specialty">Detalhes</button></div>
+</article>
+<article class="card" data-id="17-drnt" data-agency="WayShip Creative" data-search="drnt agencia de marketing digital e gestao de trafego pago wayship creative marketing / trafego pago">
+<button type="button" class="card__media" style="--bg:#2d3326" data-open="17-drnt" aria-label="Ver detalhes de DRNT"><span class="frame" data-name="DRNT"><img src="assets/media/17-drnt.png" alt="Captura do site DRNT" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>DRNT</h3><p>Agência de marketing digital e gestão de tráfego pago</p>
+<div class="acts"><a class="btn" href="https://drnt.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de DRNT (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="17-drnt">Detalhes</button></div>
+</article>
+<article class="card" data-id="14-festival-flamenco" data-agency="WayShip Creative" data-search="festival flamenco evento internacional de danca e cultura flamenca wayship creative cultura / eventos">
+<button type="button" class="card__media" style="--bg:#522026" data-open="14-festival-flamenco" aria-label="Ver detalhes de Festival Flamenco"><span class="frame" data-name="Festival Flamenco"><img src="assets/media/37-festival-flamenco.png" alt="Captura do site Festival Flamenco" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Festival Flamenco</h3><p>Evento Internacional de Dança e Cultura Flamenca</p>
+<div class="acts"><a class="btn" href="https://festivalflamenco.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Festival Flamenco (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="14-festival-flamenco">Detalhes</button></div>
+</article>
+<article class="card" data-id="15-focus-cf" data-agency="WayShip Creative" data-search="focus cf consultoria financeira e planejamento patrimonial wayship creative financas / consultoria">
+<button type="button" class="card__media" style="--bg:#1b2c3a" data-open="15-focus-cf" aria-label="Ver detalhes de Focus CF"><span class="frame" data-name="Focus CF"><img src="assets/media/15-focus-cf.png" alt="Captura do site Focus CF" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Focus CF</h3><p>Consultoria Financeira e Planejamento Patrimonial</p>
+<div class="acts"><a class="btn" href="https://focuscf.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Focus CF (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="15-focus-cf">Detalhes</button></div>
+</article>
+<article class="card" data-id="07-fusion-protecao-veicular" data-agency="DRNT" data-search="fusion protecao veicular associacao de beneficios e protecao automotiva drnt servicos / automotivo">
+<button type="button" class="card__media" style="--bg:#1657a8" data-open="07-fusion-protecao-veicular" aria-label="Ver detalhes de Fusion Proteção Veicular"><span class="frame" data-name="Fusion Proteção Veicular"><img src="assets/media/07-fusion-prote-o-veicular.png" alt="Captura do site Fusion Proteção Veicular" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">DRNT</span></button>
+<h3>Fusion Proteção Veicular</h3><p>Associação de Benefícios e Proteção Automotiva</p>
+<div class="acts"><a class="btn" href="https://fusionprotecaoveicular.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="Website de Fusion Proteção Veicular (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="07-fusion-protecao-veicular">Detalhes</button></div>
+</article>
+<article class="card" data-id="24-fusion-truck" data-agency="WayShip Creative" data-search="fusion truck protecao e rastreamento veicular para frotas de carga wayship creative logistica / automotivo">
+<button type="button" class="card__media" style="--bg:#183952" data-open="24-fusion-truck" aria-label="Ver detalhes de Fusion Truck"><span class="frame" data-name="Fusion Truck"><img src="assets/media/24-fusion-truck.png" alt="Captura do site Fusion Truck" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Fusion Truck</h3><p>Proteção e Rastreamento Veicular para Frotas de Carga</p>
+<div class="acts"><a class="btn" href="https://fusiontruck.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Fusion Truck (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="24-fusion-truck">Detalhes</button></div>
+</article>
+<article class="card" data-id="12-gcabe-group" data-agency="WayShip Creative" data-search="gcabe group holding internacional e negocios multisetoriais wayship creative holding / investimentos">
+<button type="button" class="card__media" style="--bg:#2a3d36" data-open="12-gcabe-group" aria-label="Ver detalhes de GCABE Group"><span class="frame" data-name="GCABE Group"><img src="assets/media/12-gcabe-group.png" alt="Captura do site GCABE Group" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>GCABE Group</h3><p>Holding Internacional e Negócios Multisetoriais</p>
+<div class="acts"><a class="btn" href="https://gcabegroup.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de GCABE Group (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="12-gcabe-group">Detalhes</button></div>
+</article>
+<article class="card" data-id="16-gotype" data-agency="WayShip Creative" data-search="gotype produtora audiovisual, comercial e corporativo wayship creative audiovisual / produtora">
+<button type="button" class="card__media" style="--bg:#111111" data-open="16-gotype" aria-label="Ver detalhes de GoType"><span class="frame" data-name="GoType"><img src="assets/media/16-gotype.png" alt="Captura do site GoType" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>GoType</h3><p>Produtora Audiovisual, comercial e corporativo</p>
+<div class="acts"><a class="btn" href="https://gotype.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de GoType (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="16-gotype">Detalhes</button></div>
+</article>
+<article class="card" data-id="18-lipex" data-agency="WayShip Creative" data-search="lipex solucoes quimicas e produtos de limpeza industrial wayship creative industria / quimica">
+<button type="button" class="card__media" style="--bg:#1b3752" data-open="18-lipex" aria-label="Ver detalhes de Lipex"><span class="frame" data-name="Lipex"><img src="assets/media/18-lipex.png" alt="Captura do site Lipex" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Lipex</h3><p>Soluções Químicas e Produtos de Limpeza Industrial</p>
+<div class="acts"><a class="btn" href="https://lipex.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Lipex (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="18-lipex">Detalhes</button></div>
+</article>
+<article class="card" data-id="10-lnr-conectores" data-agency="WayShip Creative" data-search="lnr conectores componentes e conectores industriais de alta precisao wayship creative industria / componentes">
+<button type="button" class="card__media" style="--bg:#2b3136" data-open="10-lnr-conectores" aria-label="Ver detalhes de LNR Conectores"><span class="frame" data-name="LNR Conectores"><img src="assets/media/10-lnr-conectores.png" alt="Captura do site LNR Conectores" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>LNR Conectores</h3><p>Componentes e Conectores Industriais de Alta Precisão</p>
+<div class="acts"><a class="btn" href="https://lnrconectores.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de LNR Conectores (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="10-lnr-conectores">Detalhes</button></div>
+</article>
+<article class="card" data-id="05-marig-producoes" data-agency="WayShip Creative" data-search="marig producoes agencia de producao audiovisual e eventos corporativos wayship creative audiovisual / entertainment">
+<button type="button" class="card__media" style="--bg:#26242c" data-open="05-marig-producoes" aria-label="Ver detalhes de Marig Produções"><span class="frame" data-name="Marig Produções"><img src="assets/media/05-marig-produ-es.png" alt="Captura do site Marig Produções" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Marig Produções</h3><p>Agência de Produção Audiovisual e Eventos Corporativos</p>
+<div class="acts"><a class="btn" href="https://marigproducoes.com" target="_blank" rel="noopener noreferrer" aria-label="Website de Marig Produções (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="05-marig-producoes">Detalhes</button></div>
+</article>
+<article class="card" data-id="19-mater-dei-cam" data-agency="WayShip Creative" data-search="mater dei cam centro de apoio a mulher e saude comunitaria wayship creative saude / social">
+<button type="button" class="card__media" style="--bg:#2a2830" data-open="19-mater-dei-cam" aria-label="Ver detalhes de Mater Dei Cam"><span class="frame" data-name="Mater Dei Cam"><img src="assets/media/19-mater-dei-cam.png" alt="Captura do site Mater Dei Cam" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Mater Dei Cam</h3><p>Centro de Apoio à Mulher e Saúde Comunitária</p>
+<div class="acts"><a class="btn" href="https://materdeicam.org.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Mater Dei Cam (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="19-mater-dei-cam">Detalhes</button></div>
+</article>
+<article class="card" data-id="28-mobit" data-agency="WayShip Creative" data-search="mobit tecnologia em mobilidade urbana e monitoramento de trafego wayship creative mobilidade / smart cities">
+<button type="button" class="card__media" style="--bg:#1a334e" data-open="28-mobit" aria-label="Ver detalhes de Mobit"><span class="frame" data-name="Mobit"><img src="assets/media/28-mobit.png" alt="Captura do site Mobit" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Mobit</h3><p>Tecnologia em Mobilidade Urbana e Monitoramento de Tráfego</p>
+<div class="acts"><a class="btn" href="https://www.mobit.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Website de Mobit (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="28-mobit">Detalhes</button></div>
+</article>
+<article class="card" data-id="33-mymailsign" data-agency="Tunnel" data-search="mymailsign gerenciador centralizado de assinaturas de e-mail corporativo tunnel saas / produtividade">
+<button type="button" class="card__media" style="--bg:#23323e" data-open="33-mymailsign" aria-label="Ver detalhes de MyMailSign"><span class="frame" data-name="MyMailSign"><img src="assets/media/33-mymailsign.png" alt="Captura do site MyMailSign" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">Tunnel</span></button>
+<h3>MyMailSign</h3><p>Gerenciador Centralizado de Assinaturas de E-mail Corporativo</p>
+<div class="acts"><a class="btn" href="https://mymailsign.com" target="_blank" rel="noopener noreferrer" aria-label="Website de MyMailSign (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="33-mymailsign">Detalhes</button></div>
+</article>
+<article class="card" data-id="27-newtechs" data-agency="WayShip Creative" data-search="newtechs automacao industrial e integracao de sistemas roboticos wayship creative automacao / industria 4.0">
+<button type="button" class="card__media" style="--bg:#1a2836" data-open="27-newtechs" aria-label="Ver detalhes de NewTechs"><span class="frame" data-name="NewTechs"><img src="assets/media/36-newtechs.png" alt="Captura do site NewTechs" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>NewTechs</h3><p>Automação Industrial e Integração de Sistemas Robóticos</p>
+<div class="acts"><a class="btn" href="https://www.newtechs.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de NewTechs (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="27-newtechs">Detalhes</button></div>
+</article>
+<article class="card" data-id="31-one-moving" data-agency="Tunnel" data-search="one moving mudancas internacionais e logistica global de relocacao tunnel logistica / international">
+<button type="button" class="card__media" style="--bg:#bc5223" data-open="31-one-moving" aria-label="Ver detalhes de One Moving"><span class="frame" data-name="One Moving"><img src="assets/media/31-one-moving.png" alt="Captura do site One Moving" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">Tunnel</span></button>
+<h3>One Moving</h3><p>Mudanças Internacionais e Logística Global de Relocação</p>
+<div class="acts"><a class="btn" href="https://www.onemoving.com" target="_blank" rel="noopener noreferrer" aria-label="Website de One Moving (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="31-one-moving">Detalhes</button></div>
+</article>
+<article class="card" data-id="20-piar-group" data-agency="Designaria" data-search="piar group comunicacao estrategica e relacoes publicas b2b designaria comunicacao / pr">
+<button type="button" class="card__media" style="--bg:#1f1f23" data-open="20-piar-group" aria-label="Ver detalhes de Piar Group"><span class="frame" data-name="Piar Group"><img src="assets/media/20-piar-group.png" alt="Captura do site Piar Group" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">Designaria</span></button>
+<h3>Piar Group</h3><p>Comunicação Estratégica e Relações Públicas B2B</p>
+<div class="acts"><a class="btn" href="https://piar.group" target="_blank" rel="noopener noreferrer" aria-label="Website de Piar Group (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="20-piar-group">Detalhes</button></div>
+</article>
+<article class="card" data-id="34-premier-portugal" data-agency="Tunnel" data-search="premier portugal mudancas internacionais em portugal tunnel logistica / international">
+<button type="button" class="card__media" style="--bg:#aa652f" data-open="34-premier-portugal" aria-label="Ver detalhes de Premier Portugal"><span class="frame" data-name="Premier Portugal"><img src="assets/media/34-premier-portugal.png" alt="Captura do site Premier Portugal" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">Tunnel</span></button>
+<h3>Premier Portugal</h3><p>Mudanças Internacionais em Portugal</p>
+<div class="acts"><a class="btn" href="https://premier-portugal.com" target="_blank" rel="noopener noreferrer" aria-label="Website de Premier Portugal (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="34-premier-portugal">Detalhes</button></div>
+</article>
+<article class="card" data-id="21-pvra" data-agency="Tunnel" data-search="pvra a tecnologia de ultrapurificacao pvra, desenvolvida na italia tunnel tecnologia / ultrapurificacao">
+<button type="button" class="card__media" style="--bg:#1d2a23" data-open="21-pvra" aria-label="Ver detalhes de PVRA"><span class="frame" data-name="PVRA"><img src="assets/media/21-pvra.png" alt="Captura do site PVRA" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">Tunnel</span></button>
+<h3>PVRA</h3><p>A tecnologia de ultrapurificação PVRA, desenvolvida na Itália</p>
+<div class="acts"><a class="btn" href="https://pvra.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de PVRA (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="21-pvra">Detalhes</button></div>
+</article>
+<article class="card" data-id="35-rain-london" data-agency="Garowa" data-search="rain london agencia digital e producao criativa no reino unido garowa estudio / creative">
+<button type="button" class="card__media" style="--bg:#1d1d1f" data-open="35-rain-london" aria-label="Ver detalhes de Rain London"><span class="frame" data-name="Rain London"><img src="assets/media/35-rain-london.png" alt="Captura do site Rain London" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">Garowa</span></button>
+<h3>Rain London</h3><p>Agência Digital e Produção Criativa no Reino Unido</p>
+<div class="acts"><a class="btn" href="https://rainlondon.co.uk" target="_blank" rel="noopener noreferrer" aria-label="Website de Rain London (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="35-rain-london">Detalhes</button></div>
+</article>
+<article class="card" data-id="22-reichenbach" data-agency="WayShip Creative" data-search="reichenbach engenharia de equipamentos e solucoes termicas wayship creative engenharia / industria">
+<button type="button" class="card__media" style="--bg:#2b343d" data-open="22-reichenbach" aria-label="Ver detalhes de Reichenbach"><span class="frame" data-name="Reichenbach"><img src="assets/media/22-reichenbach.png" alt="Captura do site Reichenbach" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Reichenbach</h3><p>Engenharia de Equipamentos e Soluções Térmicas</p>
+<div class="acts"><a class="btn" href="https://reichenbach.ind.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Reichenbach (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="22-reichenbach">Detalhes</button></div>
+</article>
+<article class="card" data-id="29-sirio" data-agency="Tunnel" data-search="sirio clube centenario de elite em sao paulo tunnel esporte / clube">
+<button type="button" class="card__media" style="--bg:#ab1d29" data-open="29-sirio" aria-label="Ver detalhes de Sírio"><span class="frame" data-name="Sírio"><img src="assets/media/29-s-rio.png" alt="Captura do site Sírio" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">Tunnel</span></button>
+<h3>Sírio</h3><p>Clube centenário de elite em São Paulo</p>
+<div class="acts"><a class="btn" href="https://sirio.org.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Sírio (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="29-sirio">Detalhes</button></div>
+</article>
+<article class="card" data-id="23-tecnoly" data-agency="WayShip Creative" data-search="tecnoly desenvolvimento de sistemas e inteligencia de dados wayship creative tecnologia / software">
+<button type="button" class="card__media" style="--bg:#162e4a" data-open="23-tecnoly" aria-label="Ver detalhes de Tecnoly"><span class="frame" data-name="Tecnoly"><img src="assets/media/23-tecnoly.png" alt="Captura do site Tecnoly" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Tecnoly</h3><p>Desenvolvimento de Sistemas e Inteligência de Dados</p>
+<div class="acts"><a class="btn" href="https://tecnoly.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Tecnoly (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="23-tecnoly">Detalhes</button></div>
+</article>
+<article class="card" data-id="30-umauma" data-agency="Tunnel" data-search="umauma grupo de entretenimento e agencias especializadas tunnel entretenimento / comunicacao">
+<button type="button" class="card__media" style="--bg:#d4562b" data-open="30-umauma" aria-label="Ver detalhes de Umauma"><span class="frame" data-name="Umauma"><img src="assets/media/30-umauma.png" alt="Captura do site Umauma" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">Tunnel</span></button>
+<h3>UMAUMA</h3><p>Grupo de entretenimento e agências especializadas</p>
+<div class="acts"><a class="btn" href="https://umauma.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Umauma (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="30-umauma">Detalhes</button></div>
+</article>
+<article class="card" data-id="25-union-protecao" data-agency="WayShip Creative" data-search="union protecao clube de beneficios e protecao veicular patrimonial wayship creative servicos / automotivo">
+<button type="button" class="card__media" style="--bg:#1d2733" data-open="25-union-protecao" aria-label="Ver detalhes de Union Proteção"><span class="frame" data-name="Union Proteção"><img src="assets/media/25-union-prote-o.png" alt="Captura do site Union Proteção" width="800" height="500" loading="lazy" decoding="async"></span><span class="badge">WayShip</span></button>
+<h3>Union Proteção</h3><p>Clube de Benefícios e Proteção Veicular Patrimonial</p>
+<div class="acts"><a class="btn" href="https://unionprotecao.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website de Union Proteção (abre em nova aba)">Website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a><button type="button" class="btn" data-open="25-union-protecao">Detalhes</button></div>
+</article>
+</div>
+<div class="empty" id="empty" hidden><p>Nenhum projeto encontrado para este filtro.</p><button type="button" id="reset">Limpar filtros</button></div>
+</section>
+</div>
+
+<section id="agencias" class="sec"><div class="wrap">
+<h2 class="t">Para agências</h2>
+<p class="lead">Trabalho como desenvolvedor white-label para agências que precisam de execução técnica previsível, sem ter que montar time interno ou gerenciar freelancer por projeto.</p>
+<div class="agencies-grid">
+<div class="ag-block">
+<span class="ag-num">01</span>
+<h3>White-label total</h3>
+<p>Seu cliente vê a sua marca. Meu nome não aparece no código, no contrato nem nas entregas.</p>
+</div>
+<div class="ag-block">
+<span class="ag-num">02</span>
+<h3>Prazo previsível</h3>
+<p>Escopo fechado com cronograma acordado no briefing. Aviso antecipado de qualquer desvio antes que vire problema.</p>
+</div>
+<div class="ag-block">
+<span class="ag-num">03</span>
+<h3>Comunicação direta</h3>
+<p>Você é o único ponto de contato. Não falo com o cliente final sem sua autorização.</p>
+</div>
+<div class="ag-block">
+<span class="ag-num">04</span>
+<h3>Código que se mantém</h3>
+<p>Documentação, padrão de código e entrega organizada. Quem pegar depois não precisa adivinhar.</p>
+</div>
+</div>
+<a class="btn btn--solid cta" href="#contato">Conversar sobre parceria <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+</div></section>
+
+<section id="sobre" class="sec"><div class="wrap">
+<h2 class="t">Desenvolvimento web.<br>Soluções sob medida.</h2>
+<div class="about">
+<figure>
+  <img src="assets/media/img_avatar.jpg" alt="Mauro Silva" width="960" height="1280" loading="lazy" decoding="async">
+  <figcaption>Mauro Silva · Mauro Silva Studio</figcaption>
+</figure>
+<div>
+<p class="lead">O Mauro Silva Studio desenvolve soluções web personalizadas, abrangendo sistemas, websites corporativos, e-commerces e arquitetura WordPress especializada.</p>
+<p class="body">Nossa atuação reúne diferentes necessidades de presença e operação digital: apresentar empresas, estruturar lojas online, desenvolver sistemas e trabalhar com projetos que exigem especialização no ecossistema WordPress.</p>
+<div class="stack-strip" aria-label="Stack técnica">
+  <span>WordPress</span><span>React</span><span>TypeScript</span><span>Next.js</span><span>WooCommerce</span><span>Node.js</span><span>Headless CMS</span><span>API REST</span>
+</div>
+<div class="svc">
+<div><h3>Sistemas personalizados</h3><p>Desenvolvimento de soluções web conforme as necessidades de cada projeto.</p></div>
+<div><h3>Websites corporativos</h3><p>Presença institucional para apresentar empresas, seus serviços e informações.</p></div>
+<div><h3>E-commerces</h3><p>Desenvolvimento de lojas online para negócios que vendem pela internet.</p></div>
+<div><h3>Especialização WordPress</h3><p>Arquitetura e desenvolvimento de soluções com WordPress.</p></div>
+</div>
+<a class="btn btn--solid cta" href="#contato">Conversar sobre um projeto <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+</div></div>
+<dl class="nums"><div><dt>80+</dt><dd>projetos entregues para agências e empresas</dd></div><div><dt>2017</dt><dd>atuando como desenvolvedor WordPress e React</dd></div><div><dt>100%</dt><dd>white-label: seu cliente vê a sua marca, não a minha</dd></div></dl>
+</div></section>
+
+<section id="depoimentos" class="sec"><div class="wrap">
+<h2 class="t">Recomendações</h2>
+<div class="recs">
+  <article class="rec">
+    <div class="rec__av" aria-hidden="true">MA</div>
+    <div>
+      <p class="rec__t">Trabalhar com o MAUROSILVASTUDIO no desenvolvimento dos sites dos nossos clientes foi excelente. Como lidamos com grandes marcas e novos negócios na TUNNEL, precisávamos de alguém ágil. A comunicação dele foi impecável, o prazo foi cumprido à risca e a qualidade técnica da entrega superou as expectativas. Recomendo muito</p>
+      <p class="rec__a"><strong>Mauricio</strong> · Novos Negócios, Tunnel</p>
+    </div>
+  </article>
+  <article class="rec">
+    <div class="rec__av" aria-hidden="true">EL</div>
+    <div>
+      <p class="rec__t">Trabalhar com o Mauro foi um divisor de águas para a nossa agência. Ele entende profundamente de WordPress e entregou um site institucional impecável, superando todas as expectativas de prazo e design. A comunicação clara e a proatividade dele fizeram toda a diferença no projeto.</p>
+      <p class="rec__a"><strong>Elena</strong> · Gestora, WayShip Creative</p>
+    </div>
+  </article>
+  <article class="rec">
+    <div class="rec__av" aria-hidden="true">DN</div>
+    <div>
+      <p class="rec__t">O Mauro é um desenvolvedor extremamente confiável. Ele assumiu vários projetos complexos e entregou no prazo, como também sugeriu melhorias de performance que otimizaram nossa taxa de conversão. É o tipo de profissional que você mantém no time.</p>
+      <p class="rec__a"><strong>Daniel Nunes</strong> · Founder, Tunnel</p>
+    </div>
+  </article>
+</div>
+</div></section>
+
+<section id="contato" class="sec"><div class="wrap">
+<h2 class="t">Entre em contato</h2>
+<p class="body" style="margin-bottom:0">Se você é agência e quer conversar sobre uma parceria, ou tem um projeto específico em mente, me chama por um dos canais abaixo. Quanto mais contexto você mandar (tipo de projeto, prazo, stack), mais rápido eu respondo com uma proposta útil.</p>
+<div class="contact-grid">
+<a class="contact-card" href="mailto:contato@maurosilvastudio.com.br?subject=Parceria%20-%20briefing%20de%20projeto&body=Ol%C3%A1%20Mauro%2C%0A%0ASou%20da%20ag%C3%AAncia%20%5Bnome%5D.%0A%0ATipo%20de%20projeto%3A%20%0APrazo%20desejado%3A%20%0AStack%20esperada%3A%20%0AContexto%20do%20cliente%3A%20%0A%0AAbs.">
+<span class="cc-label">E-mail</span>
+<span class="cc-value">contato@maurosilvastudio.com.br</span>
+<span class="cc-hint">Abre já com um briefing pré-preenchido</span>
+</a>
+<a class="contact-card" href="https://wa.me/5598987316362?text=Ol%C3%A1%20Mauro%2C%20vim%20pelo%20site.%20Sou%20da%20ag%C3%AAncia%20%5Bnome%5D%20e%20queria%20conversar%20sobre%20uma%20parceria%20white-label." target="_blank" rel="noopener noreferrer">
+<span class="cc-label">WhatsApp</span>
+<span class="cc-value">+55 (98) 98731-6362</span>
+<span class="cc-hint">Resposta mais rápida em horário comercial</span>
+</a>
+</div>
+</div></section>
+</main>
+
+<footer class="ftr"><div class="wrap">
+<a class="mark" href="#inicio" aria-label="Voltar ao topo"><span id="mark">MAUROSILVASTUDIO</span></a>
+<div class="legal"><span>© 2026 Mauro Silva Studio · CNPJ 62.648.674/0001-54</span><a href="mailto:contato@maurosilvastudio.com.br">contato@maurosilvastudio.com.br</a></div>
+</div></footer>
+
+<dialog id="modal" aria-labelledby="m-title">
+<div class="ctl">
+<button type="button" id="m-prev" aria-label="Projeto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+<button type="button" id="m-next" aria-label="Próximo projeto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+<button type="button" id="m-close" aria-label="Fechar projeto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<div class="shell">
+<div class="mm" id="m-media"><div class="frame" id="m-frame"><img id="m-img" alt="" decoding="async"></div></div>
+<div class="panel" id="m-panel">
+<p class="pos" id="m-pos"></p>
+<h2 id="m-title"></h2>
+<p class="sub" id="m-sub"></p>
+<dl class="facts"><div><dt>Categoria</dt><dd id="m-cat"></dd></div><div><dt>Agência parceira</dt><dd id="m-agency"></dd></div><div><dt>Website</dt><dd id="m-domain"></dd></div></dl>
+<dl class="mnums" id="m-nums"></dl>
+<h3 class="mh" id="m-ctx-h" hidden></h3><p class="ctx" id="m-ctx" hidden></p>
+<div class="stack" id="m-stack" hidden></div>
+<blockquote class="mq" id="m-quote" hidden><p></p><footer></footer></blockquote>
+<div class="agency"><p>Tem um layout aprovado?</p><a class="btn" href="#" id="m-brief" target="_blank" rel="noopener noreferrer">Entrar em contato</a></div>
+<a class="btn btn--solid cta" id="m-link" target="_blank" rel="noopener noreferrer">Visitar website <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+</div></div>
+</dialog>
+
+<script type="application/json" id="data">[{"id":"01-aap-sjc","name":"AAP SJC","subtitle":"Associação dos Aposentados e Pensionistas de São José dos Campos","url":"https://aapsjc.org.br","agency":"WayShip Creative","image":"assets/media/01-aap-sjc.png","bgColor":"#4069E1","category":"INSTITUCIONAL / ONG"},{"id":"02-agr-consultores","name":"AGR Consultores","subtitle":"Consultoria Estratégica Financeira e Tributária no Brasil","url":"https://agrconsultores.netlify.app","agency":"WayShip Creative","image":"assets/media/02-agr-consultores.png","bgColor":"#A1CD46","category":"CONSULTORIA / CORPORATIVO","stack":["Vite","React","TypeScript","GSAP"]},{"id":"11-altwin","name":"Altwin","subtitle":"Soluções Corporativas em Tecnologia e Infraestrutura","url":"https://altwin.com.br","agency":"WayShip Creative","image":"assets/media/11-altwin.png","bgColor":"#244b61","category":"TECNOLOGIA / B2B","stack":["React","SPA","Tradutor pt/en"]},{"id":"04-amora-os-pedacos","name":"Amor aos Pedaços","subtitle":"Confeitaria Artesanal e Experiências Gastronômicas","url":"https://amoraospedacos.com.br","agency":"WayShip Creative","image":"assets/media/04-amora-os-peda-os.png","bgColor":"#874d5c","category":"GASTRONOMIA / E-COMMERCE","solution":"Plugin WordPress para a campanha: cadastro de participantes, caixa por loja via CPF e API de estatísticas que alimenta um dashboard executivo.","stack":["WordPress","Plugin próprio","API REST"],"stats":[{"v":"44 anos","l":"de história da marca, tema do hero do site"}]},{"id":"38-atelie-casa","name":"Ateliê Casa","subtitle":"Estúdio de design de interiores","url":"https://ateliecasa.com","agency":"WayShip Creative","image":"assets/media/38-atelie-casa.png","bgColor":"#273746","category":"DESIGN / INTERIORES"},{"id":"03-bep-energia","name":"BEP Energia","subtitle":"Gestão Otimizada e Mercado Livre de Energia","url":"https://bepenergia.netlify.app","agency":"Designaria","image":"assets/media/03-bep-energia.png","bgColor":"#FF9D00","category":"ENERGIA / B2B"},{"id":"06-cablie","name":"Cablie","subtitle":"Soluções Industriais em Cabos e Condutores Elétricos","url":"https://cablie.com","agency":"WayShip Creative","image":"assets/media/06-cablie.png","bgColor":"#2c333a","category":"INDÚSTRIA / CABOS"},{"id":"08-cabr-cabos","name":"CABR Cabos","subtitle":"Soluções Industriais em Cabos e Condutores Elétricos","url":"https://cabrcabos.com.br","agency":"WayShip Creative","image":"assets/media/08-cabrcabos.png","bgColor":"#243746","category":"INDÚSTRIA / ELETRICIDADE"},{"id":"09-cofibam","name":"Cofibam","subtitle":"Fabricação de Cabos Especiais e Fios de Alta Performance","url":"https://cofibam.com.br","agency":"WayShip Creative","image":"assets/media/09-cofibam.png","bgColor":"#1d2228","category":"INDÚSTRIA / MANUFATURA"},{"id":"32-conahp-2026","name":"CONAHP 2026","subtitle":"Congressos Nacional de Hospitais Privados da Anahp","url":"https://conahp.org.br/2026","agency":"Tunnel","image":"assets/media/32-conahp-2026.png","bgColor":"#217462","category":"EVENTOS / HOSPITALAR"},{"id":"13-drago-specialty","name":"Drago Specialty","subtitle":"Empresa de especialidades químicas","url":"https://dragospecialty.com","agency":"WayShip Creative","image":"assets/media/13-drago-specialty.png","bgColor":"#7a3928","category":"INDÚSTRIA / QUÍMICA"},{"id":"17-drnt","name":"DRNT","subtitle":"Agência de marketing digital e gestão de tráfego pago","url":"https://drnt.com.br","agency":"WayShip Creative","image":"assets/media/17-drnt.png","bgColor":"#2d3326","category":"MARKETING / TRÁFEGO PAGO"},{"id":"14-festival-flamenco","name":"Festival Flamenco","subtitle":"Evento Internacional de Dança e Cultura Flamenca","url":"https://festivalflamenco.com.br","agency":"WayShip Creative","image":"assets/media/37-festival-flamenco.png","bgColor":"#522026","category":"CULTURA / EVENTOS"},{"id":"15-focus-cf","name":"Focus CF","subtitle":"Consultoria Financeira e Planejamento Patrimonial","url":"https://focuscf.com.br","agency":"WayShip Creative","image":"assets/media/15-focus-cf.png","bgColor":"#1b2c3a","category":"FINANÇAS / CONSULTORIA"},{"id":"07-fusion-protecao-veicular","name":"Fusion Proteção Veicular","subtitle":"Associação de Benefícios e Proteção Automotiva","url":"https://fusionprotecaoveicular.netlify.app","agency":"DRNT","image":"assets/media/07-fusion-prote-o-veicular.png","bgColor":"#1657a8","category":"SERVIÇOS / AUTOMOTIVO"},{"id":"24-fusion-truck","name":"Fusion Truck","subtitle":"Proteção e Rastreamento Veicular para Frotas de Carga","url":"https://fusiontruck.com.br","agency":"WayShip Creative","image":"assets/media/24-fusion-truck.png","bgColor":"#183952","category":"LOGÍSTICA / AUTOMOTIVO"},{"id":"12-gcabe-group","name":"GCABE Group","subtitle":"Holding Internacional e Negócios Multisetoriais","url":"https://gcabegroup.com.br","agency":"WayShip Creative","image":"assets/media/12-gcabe-group.png","bgColor":"#2a3d36","category":"HOLDING / INVESTIMENTOS"},{"id":"16-gotype","name":"GoType","subtitle":"Produtora Audiovisual, comercial e corporativo","url":"https://gotype.com.br","agency":"WayShip Creative","image":"assets/media/16-gotype.png","bgColor":"#111111","category":"AUDIOVISUAL / PRODUTORA"},{"id":"18-lipex","name":"Lipex","subtitle":"Soluções Químicas e Produtos de Limpeza Industrial","url":"https://lipex.com.br","agency":"WayShip Creative","image":"assets/media/18-lipex.png","bgColor":"#1b3752","category":"INDÚSTRIA / QUÍMICA"},{"id":"10-lnr-conectores","name":"LNR Conectores","subtitle":"Componentes e Conectores Industriais de Alta Precisão","url":"https://lnrconectores.com.br","agency":"WayShip Creative","image":"assets/media/10-lnr-conectores.png","bgColor":"#2b3136","category":"INDÚSTRIA / COMPONENTES"},{"id":"05-marig-producoes","name":"Marig Produções","subtitle":"Agência de Produção Audiovisual e Eventos Corporativos","url":"https://marigproducoes.com","agency":"WayShip Creative","image":"assets/media/05-marig-produ-es.png","bgColor":"#26242c","category":"AUDIOVISUAL / ENTERTAINMENT"},{"id":"19-mater-dei-cam","name":"Mater Dei Cam","subtitle":"Centro de Apoio à Mulher e Saúde Comunitária","url":"https://materdeicam.org.br","agency":"WayShip Creative","image":"assets/media/19-mater-dei-cam.png","bgColor":"#2a2830","category":"SAÚDE / SOCIAL"},{"id":"28-mobit","name":"Mobit","subtitle":"Tecnologia em Mobilidade Urbana e Monitoramento de Tráfego","url":"https://www.mobit.com.br/","agency":"WayShip Creative","image":"assets/media/28-mobit.png","bgColor":"#1a334e","category":"MOBILIDADE / SMART CITIES"},{"id":"33-mymailsign","name":"MyMailSign","subtitle":"Gerenciador Centralizado de Assinaturas de E-mail Corporativo","url":"https://mymailsign.com","agency":"Tunnel","image":"assets/media/33-mymailsign.png","bgColor":"#23323e","category":"SAAS / PRODUTIVIDADE"},{"id":"27-newtechs","name":"NewTechs","subtitle":"Automação Industrial e Integração de Sistemas Robóticos","url":"https://www.newtechs.com.br","agency":"WayShip Creative","image":"assets/media/36-newtechs.png","bgColor":"#1a2836","category":"AUTOMAÇÃO / INDÚSTRIA 4.0"},{"id":"31-one-moving","name":"One Moving","subtitle":"Mudanças Internacionais e Logística Global de Relocação","url":"https://www.onemoving.com","agency":"Tunnel","image":"assets/media/31-one-moving.png","bgColor":"#bc5223","category":"LOGÍSTICA / INTERNATIONAL"},{"id":"20-piar-group","name":"Piar Group","subtitle":"Comunicação Estratégica e Relações Públicas B2B","url":"https://piar.group","agency":"Designaria","image":"assets/media/20-piar-group.png","bgColor":"#1f1f23","category":"COMUNICAÇÃO / PR"},{"id":"34-premier-portugal","name":"Premier Portugal","subtitle":"Mudanças Internacionais em Portugal","url":"https://premier-portugal.com","agency":"Tunnel","image":"assets/media/34-premier-portugal.png","bgColor":"#aa652f","category":"LOGÍSTICA / INTERNATIONAL"},{"id":"21-pvra","name":"PVRA","subtitle":"A tecnologia de ultrapurificação PVRA, desenvolvida na Itália","url":"https://pvra.com.br","agency":"Tunnel","image":"assets/media/21-pvra.png","bgColor":"#1d2a23","category":"TECNOLOGIA / ULTRAPURIFICAÇÃO"},{"id":"35-rain-london","name":"Rain London","subtitle":"Agência Digital e Produção Criativa no Reino Unido","url":"https://rainlondon.co.uk","agency":"Garowa","image":"assets/media/35-rain-london.png","bgColor":"#1d1d1f","category":"ESTÚDIO / CREATIVE"},{"id":"22-reichenbach","name":"Reichenbach","subtitle":"Engenharia de Equipamentos e Soluções Térmicas","url":"https://reichenbach.ind.br","agency":"WayShip Creative","image":"assets/media/22-reichenbach.png","bgColor":"#2b343d","category":"ENGENHARIA / INDÚSTRIA"},{"id":"29-sirio","name":"Sírio","subtitle":"Clube centenário de elite em São Paulo","url":"https://sirio.org.br","agency":"Tunnel","image":"assets/media/29-s-rio.png","bgColor":"#ab1d29","category":"ESPORTE / CLUBE"},{"id":"23-tecnoly","name":"Tecnoly","subtitle":"Desenvolvimento de Sistemas e Inteligência de Dados","url":"https://tecnoly.com.br","agency":"WayShip Creative","image":"assets/media/23-tecnoly.png","bgColor":"#162e4a","category":"TECNOLOGIA / SOFTWARE"},{"id":"30-umauma","name":"Umauma","subtitle":"Grupo de entretenimento e agências especializadas","url":"https://umauma.com.br","agency":"Tunnel","image":"assets/media/30-umauma.png","bgColor":"#d4562b","category":"ENTRETENIMENTO / COMUNICAÇÃO","description":"O grupo UMAUMA reúne agências especializadas que conectam marcas e pessoas por meio de experiências e entretenimento. Seu website apresenta o grupo, suas agências e seus cases."},{"id":"25-union-protecao","name":"Union Proteção","subtitle":"Clube de Benefícios e Proteção Veicular Patrimonial","url":"https://unionprotecao.com.br","agency":"WayShip Creative","image":"assets/media/25-union-prote-o.png","bgColor":"#1d2733","category":"SERVIÇOS / AUTOMOTIVO"}]</script>
+<script>
+(()=>{
+'use strict';
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const root=document.documentElement,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const DATA=JSON.parse($('#data').textContent),byId=new Map(DATA.map(p=>[p.id,p]));
+const grid=$('#grid'),cards=$$('.card',grid),chips=$$('.chip'),dlg=$('#modal');
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const wait=(fn,ms)=>reduce?fn():setTimeout(fn,ms);
+/* header, menu, nav ativa */
+const hdr=$('#hdr'),burger=$('#burger'),mnav=$('#mnav');
+const onScroll=()=>hdr.classList.toggle('is-scrolled',scrollY>8);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const menu=open=>{mnav.classList.toggle('is-open',open);burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Fechar menu':'Abrir menu')};
+burger.addEventListener('click',()=>menu(burger.getAttribute('aria-expanded')!=='true'));
+mnav.addEventListener('click',e=>{if(e.target.closest('a'))menu(false)});
+addEventListener('resize',()=>menu(false));
+const links=$$('.nav a');
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.toggleAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'}).observe&&['inicio','studio','agencias','sobre','contato'].forEach(id=>{const el=document.getElementById(id);if(el)window.__io=(window.__io||new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.toggleAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'})),window.__io.observe(el)});
+/* wordmark ajustada à largura */
+const mark=$('#mark'),fit=()=>{mark.style.fontSize='100px';mark.style.fontSize=(100*mark.parentElement.clientWidth/mark.scrollWidth)+'px'};
+fit();document.fonts&&document.fonts.ready.then(fit);addEventListener('resize',()=>requestAnimationFrame(fit));
+/* imagens com fallback */
+const fail=img=>img.closest('.frame')?.classList.add('is-fallback');
+grid.addEventListener('error',e=>{if(e.target.tagName==='IMG')fail(e.target)},true);
+$$('img',grid).forEach(i=>{if(i.complete&&!i.naturalWidth)fail(i)});
+/* filtros */
+const st={agency:'all',q:''};
+const status=$('#status'),empty=$('#empty');
+function apply(animate){
+  const run=()=>{
+    let n=0;
+    cards.forEach(c=>{const ok=(st.agency==='all'||c.dataset.agency===st.agency)&&(!st.q||c.dataset.search.includes(st.q));c.hidden=!ok;if(ok)c.style.setProperty('--i',Math.min(n++,10))});
+    chips.forEach(c=>c.setAttribute('aria-pressed',c.dataset.filter===st.agency));
+    empty.hidden=n>0;
+    status.textContent=(st.agency==='all'&&!st.q)?'':`Mostrando ${n} de ${cards.length} projetos`;
+    grid.classList.remove('is-filtering');
+    if(animate&&!reduce){grid.classList.add('is-entering');setTimeout(()=>grid.classList.remove('is-entering'),900)}
+  };
+  if(animate&&!reduce){grid.classList.add('is-filtering');setTimeout(run,160)}else run();
+}
+$('#chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b||b.dataset.filter===st.agency)return;st.agency=b.dataset.filter;apply(true)});
+let t;$('#q').addEventListener('input',e=>{clearTimeout(t);t=setTimeout(()=>{st.q=norm(e.target.value.trim());apply(true)},140)});
+$('#reset').addEventListener('click',()=>{st.agency='all';st.q='';$('#q').value='';apply(true)});
+apply(false);
+/* modal */
+const el={frame:$('#m-frame'),img:$('#m-img'),media:$('#m-media'),panel:$('#m-panel'),ctx:$('#m-ctx')};
+let cur=null,trigger=null,closing=false;
+const list=()=>{const v=cards.filter(c=>!c.hidden).map(c=>c.dataset.id);return v.includes(cur&&cur.id)||!cur?v:DATA.map(p=>p.id)};
+function fill(p){
+  cur=p;const l=list(),i=l.indexOf(p.id);
+  $('#m-title').textContent=p.name;$('#m-sub').textContent=p.subtitle;
+  $('#m-cat').textContent=p.category;$('#m-agency').textContent=p.agency;
+  $('#m-domain').textContent=new URL(p.url).hostname.replace(/^www\./,'');
+  $('#m-link').href=p.url;$('#m-link').setAttribute('aria-label','Visitar website de '+p.name+' (abre em nova aba)');
+  const msg=encodeURIComponent(`Olá Mauro, vi o projeto ${p.name} no seu portfólio e queria conversar sobre uma demanda parecida.`);
+  $('#m-brief').href=`https://wa.me/5598987316362?text=${msg}`;
+  $('#m-pos').textContent=`${String(i+1).padStart(2,'0')} de ${String(l.length).padStart(2,'0')}`;
+  const body=p.solution||p.description;el.ctx.textContent=body||'';el.ctx.hidden=!body;
+  const h=$('#m-ctx-h');h.textContent=p.solution?'Solução':'Sobre o projeto';h.hidden=!body;
+  const nums=$('#m-nums');nums.replaceChildren();
+  nums.hidden=!(p.stats&&p.stats.length);(p.stats||[]).forEach(s=>{const d=document.createElement('div'),a=document.createElement('dt'),b=document.createElement('dd');a.textContent=s.v;b.textContent=s.l;d.append(a,b);nums.append(d)});
+  const stack=$('#m-stack');stack.replaceChildren();(p.stack||[]).forEach(s=>{const i=document.createElement('span');i.textContent=s;stack.append(i)});stack.hidden=!(p.stack&&p.stack.length);
+  const q=$('#m-quote');q.hidden=!p.quote;if(p.quote){$('p',q).textContent=p.quote.text;$('footer',q).textContent=p.quote.author}
+  el.media.style.setProperty('--bg',p.bgColor);
+  el.frame.classList.remove('is-fallback');el.frame.dataset.name=p.name;
+  el.img.classList.remove('is-ready');el.img.alt='Captura do site '+p.name;
+  el.img.onload=()=>el.img.classList.add('is-ready');
+  el.img.onerror=()=>{fail(el.img);el.img.classList.add('is-ready')};
+  el.img.src=p.image;
+  if(el.img.complete&&el.img.naturalWidth)el.img.classList.add('is-ready');
+  el.panel.scrollTop=0;$('.shell',dlg).scrollTop=0;
+  [-1,1].forEach(d=>{const n=byId.get(l[(i+d+l.length)%l.length]);if(n)new Image().src=n.image});
+  history.replaceState(null,'','#projeto-'+p.id);
+}
+function open(id,from){
+  const p=byId.get(id);if(!p)return;
+  trigger=from||document.activeElement;closing=false;
+  fill(p);
+  if(!dlg.open){dlg.showModal();root.classList.add('modal-open');requestAnimationFrame(()=>requestAnimationFrame(()=>dlg.classList.add('is-open')))}
+}
+function go(d){
+  const l=list(),i=l.indexOf(cur.id),n=byId.get(l[(i+d+l.length)%l.length]);
+  if(!n||n===cur)return;
+  el.panel.classList.add('is-swapping');wait(()=>{fill(n);el.panel.classList.remove('is-swapping')},140);
+}
+function close(){
+  if(!dlg.open||closing)return;closing=true;dlg.classList.remove('is-open');
+  wait(()=>dlg.close(),300);
+}
+dlg.addEventListener('close',()=>{
+  root.classList.remove('modal-open');closing=false;cur=null;
+  history.replaceState(null,'',location.pathname+location.search);
+  if(trigger&&document.contains(trigger))trigger.focus({preventScroll:true});
+});
+dlg.addEventListener('cancel',e=>{e.preventDefault();close()});
+dlg.addEventListener('click',e=>{if(e.target===dlg)close()});
+$('#m-close').addEventListener('click',close);
+$('#m-prev').addEventListener('click',()=>go(-1));
+$('#m-next').addEventListener('click',()=>go(1));
+dlg.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(-1);else if(e.key==='ArrowRight')go(1)});
+let x0=null;
+dlg.addEventListener('touchstart',e=>{x0=e.target.closest('#m-media')?e.touches[0].clientX:null},{passive:true});
+dlg.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>60)go(dx<0?1:-1)});
+grid.addEventListener('click',e=>{const b=e.target.closest('[data-open]');if(b)open(b.dataset.open,b)});
+const fromHash=()=>{const m=location.hash.match(/^#projeto-(.+)$/);if(m&&byId.has(m[1])&&!(cur&&cur.id===m[1]))open(m[1],$('#studio'))};
+addEventListener('hashchange',fromHash);fromHash();
+document.addEventListener('click',e=>{const b=e.target.closest('[data-agency-go]');if(!b)return;const c=chips.find(x=>x.dataset.filter===b.dataset.agencyGo);if(c){c.click();document.getElementById('studio').scrollIntoView()}});
+})();
+</script>
+</body>
+</html>
