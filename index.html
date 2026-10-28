@@ -63,12 +63,23 @@ img{display:block;max-width:100%}
 .mnav.is-open{transform:none;opacity:1;visibility:visible}
 .mnav a{padding:16px 0;font-size:20px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
 }
+.mnav{max-height:calc(100dvh - var(--hh));overflow-y:auto}
+@media(max-width:1099px){.nav a[data-opt]{display:none}}
+@media(min-width:1100px){.nav{gap:clamp(14px,1.8vw,36px);font-size:13px}}
 /* hero */
 .hero{display:grid;gap:32px;padding:clamp(48px,9vw,112px) 0 clamp(64px,9vw,112px)}
 .hero h1{font-size:clamp(1.5rem,1rem + 1.7vw,2.5rem);font-weight:400;line-height:1.25;letter-spacing:-.02em;max-width:34ch}
 .hero>*{animation:rise .9s var(--ease) both}.hero h1{animation-delay:.12s}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}}
-@media(min-width:1024px){.hero{grid-template-columns:repeat(12,1fr);gap:48px}.hero .label{grid-column:span 4}.hero h1{grid-column:span 8;max-width:none}}
+@media(min-width:1024px){.hero{grid-template-columns:repeat(12,1fr);gap:48px}.hero-meta{grid-column:span 4}.hero h1{grid-column:span 8;max-width:none}}
+/* AI links below the studio registration */
+.hero-meta{min-width:0}
+.ai-links{display:flex;align-items:center;gap:14px;margin-top:18px}
+.ai-links a{display:grid;place-items:center;width:28px;height:28px;color:#555;opacity:.72;transition:opacity .2s,transform .2s}
+.ai-links a:hover{opacity:1;transform:translateY(-2px)}
+.ai-links img{width:21px;height:21px;object-fit:contain}
+.ai-links a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+@media(max-width:639px){.ai-links{margin-top:14px;gap:16px}.ai-links a{width:30px;height:30px}.ai-links img{width:23px;height:23px}}
 /* studio */
 .bar{position:sticky;top:var(--hh);z-index:30;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid #efefef;padding:16px 0;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -144,8 +155,6 @@ h2.t{font-size:clamp(1.9rem,1.2rem + 2.6vw,3rem);font-weight:500;letter-spacing:
 .ag-block p{font-size:14px;line-height:1.6;color:#555;position:relative;z-index:1;}
 .ag-num{position:absolute;top:20px;right:24px;font-size:2.5rem;font-weight:300;color:var(--line);line-height:1;z-index:0;transition:color .3s;}
 .ag-block:hover .ag-num{color:#ccc;}
-.ag-note{padding:24px;background:var(--soft);border-left:2px solid var(--ink);font-size:15px;line-height:1.6;color:#333;margin-bottom:32px}
-.ag-note strong{font-weight:700}
 
 /* contact block */
 .contact-grid{display:grid;gap:16px;margin-top:32px;max-width:640px}
@@ -169,6 +178,74 @@ h2.t{font-size:clamp(1.9rem,1.2rem + 2.6vw,3rem);font-weight:500;letter-spacing:
 .mark{display:block;overflow:hidden;white-space:nowrap;line-height:.85}
 .mark span{display:inline-block;font-weight:800;letter-spacing:-.04em;font-size:clamp(1.5rem,8vw,6.5rem)}
 .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:32px;font-size:12px;color:#777}
+/* processo */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:36px}
+.step{position:relative;margin-left:5px;padding-left:34px;padding-bottom:2px;border-left:1px solid var(--line)}
+.step::before{content:'';position:absolute;left:-5px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 4px #fff}
+.step__n{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:8px}
+.step h3{font-size:1.0625rem;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.step p{font-size:14px;line-height:1.65;color:#555}
+@media(min-width:900px){
+.steps{grid-template-columns:repeat(4,1fr);gap:32px}
+.step{margin-left:0;padding-left:0;padding-top:30px;border-left:0;border-top:1px solid var(--line)}
+.step::before{left:0;top:-5px}
+}
+/* stack & qualidade */
+.tech-grid{display:grid;gap:20px}
+@media(min-width:768px){.tech-grid{grid-template-columns:repeat(3,1fr)}}
+.tech-card{display:flex;flex-direction:column;gap:12px;border:1px solid var(--line);padding:28px 24px;transition:border-color .3s,transform .5s var(--ease)}
+.tech-card:hover{border-color:var(--ink);transform:translateY(-3px)}
+.tech-card h3{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.tech-card p{font-size:14px;line-height:1.65;color:#555}
+.tech-card .why{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.6;color:#333}
+.tech-card .why strong{font-weight:700;color:var(--ink)}
+/* faq */
+.faq{max-width:860px;border-top:1px solid var(--line)}
+.faq__item{border-bottom:1px solid var(--line)}
+.faq__item summary{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:22px 0;font-size:clamp(1rem,.95rem + .3vw,1.15rem);font-weight:600;letter-spacing:-.01em;line-height:1.4;cursor:pointer;list-style:none}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__item summary:hover{color:#000}
+.faq__ic{flex:none;position:relative;width:16px;height:16px;margin-top:5px}
+.faq__ic::before,.faq__ic::after{content:'';position:absolute;background:var(--ink);transition:transform .3s var(--ease)}
+.faq__ic::before{left:0;top:7px;width:16px;height:2px}
+.faq__ic::after{left:7px;top:0;width:2px;height:16px}
+.faq__item[open] .faq__ic::after{transform:scaleY(0)}
+.faq__a{padding:0 0 24px;max-width:70ch}
+.faq__a p{font-size:14.5px;line-height:1.7;color:#555}
+.faq__a p + p{margin-top:14px}
+.faq__note{margin-top:28px;font-size:14px;color:#666}
+.faq__note a{font-weight:600;text-decoration:underline;text-underline-offset:4px}
+
+/* dark sections */
+.sec--dark{background:#111;color:#fff;border-top:0}
+.sec--dark + .sec--dark{border-top:1px solid #222}
+.sec--dark .t{color:#fff}
+.sec--dark .lead{color:#b8b8b8}
+.sec--dark .body{color:#b8b8b8}
+.sec--dark .ag-block{border-color:#2a2a2a;background:transparent}
+.sec--dark .ag-block:hover{border-color:#fff}
+.sec--dark .ag-block h3{color:#fff}
+.sec--dark .ag-block p{color:#a0a0a0}
+.sec--dark .ag-num{color:#222}
+.sec--dark .ag-block:hover .ag-num{color:#444}
+.sec--dark .btn{border-color:#333;color:#fff}
+.sec--dark .btn:hover{background:#fff;border-color:#fff;color:#111}
+.sec--dark .btn--solid{background:#fff;border-color:#fff;color:#111}
+.sec--dark .btn--solid:hover{background:#ddd;border-color:#ddd;color:#111}
+.sec--dark .step{border-color:#2a2a2a}
+.sec--dark .step::before{background:#fff;box-shadow:0 0 0 4px #111}
+.sec--dark .step__n{color:#666}
+.sec--dark .step h3{color:#fff}
+.sec--dark .step p{color:#a0a0a0}
+.sec--dark .tech-card{border-color:#2a2a2a}
+.sec--dark .tech-card:hover{border-color:#fff}
+.sec--dark .tech-card h3{color:#fff}
+.sec--dark .tech-card p{color:#a0a0a0}
+.sec--dark .tech-card .why{border-top-color:#2a2a2a;color:#c0c0c0}
+.sec--dark .tech-card .why strong{color:#fff}
+.sec--dark .stack-strip span{background:#1a1a1a;border-color:#2a2a2a;color:#c0c0c0}
+.sec--dark :focus-visible{outline-color:#fff}
+
 /* modal */
 dialog{padding:0;border:0;background:#fff;color:var(--ink);width:min(1120px,calc(100% - 48px));max-width:none;height:min(760px,calc(100dvh - 48px));max-height:none;overflow:hidden;opacity:0;transform:translateY(18px) scale(.985);transition:opacity .28s ease,transform .45s var(--ease);box-shadow:0 40px 100px -20px rgba(0,0,0,.5)}
 dialog.is-open{opacity:1;transform:none}
@@ -220,15 +297,22 @@ html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!importan
 <a class="skip" href="#studio">Ir para o conteúdo</a>
 <header class="hdr" id="hdr"><div class="wrap">
 <a class="logo" href="#inicio" aria-label="MAUROSILVASTUDIO — início">MAUROSILVASTUDIO</a>
-<nav class="nav" aria-label="Principal"><a href="#inicio">Início</a><a href="#studio">Studio</a><a href="#agencias">Agências</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+<nav class="nav" aria-label="Principal"><a href="#inicio">Início</a><a href="#studio">Studio</a><a href="#agencias">Agências</a><a href="#processo" data-opt>Processo</a><a href="#qualidade" data-opt>Stack</a><a href="#faq" data-opt>FAQ</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
 <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Abrir menu"><i></i></button>
 </div></header>
-<nav class="mnav" id="mnav" aria-label="Menu mobile"><a href="#inicio">Início</a><a href="#studio">Studio</a><a href="#agencias">Agências</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+<nav class="mnav" id="mnav" aria-label="Menu mobile"><a href="#inicio">Início</a><a href="#studio">Studio</a><a href="#agencias">Agências</a><a href="#processo">Processo</a><a href="#qualidade">Stack</a><a href="#faq">FAQ</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
 
 <main>
 <div class="wrap">
 <section id="inicio" class="hero">
-<p class="label">Web Development<br>Mauro Silva Studio<br>62.648.674/0001-54</p>
+<div class="hero-meta">
+<p class="label">Desevolvedor Web<br>Mauro Silva Studio<br>62.648.674/0001-54<br>Saiba mais por IAs</p>
+<nav class="ai-links" aria-label="Acesse as plataformas de inteligência artificial">
+<a href="https://chatgpt.com/?q=Pesquise%20Mauro%20Silva%20e%20MAUROSILVASTUDIO%20usando%20como%20ponto%20de%20partida%20o%20site%20oficial%20https%3A%2F%2Fmaurosilvastudio.com.br%2F.%20Analise%20o%20site%20e%20o%20portf%C3%B3lio%20p%C3%BAblico%20para%20explicar%20quem%20%C3%A9%20Mauro%20Silva%2C%20quais%20servi%C3%A7os%20e%20especialidades%20s%C3%A3o%20apresentados%2C%20quais%20projetos%20est%C3%A3o%20dispon%C3%ADveis%20e%20como%20o%20est%C3%BAdio%20pode%20atuar%20como%20parceiro%20t%C3%A9cnico%20ou%20white-label%20para%20ag%C3%AAncias.%20Use%20fontes%20p%C3%BAblicas%20verific%C3%A1veis%20e%20inclua%20os%20URLs%20das%20fontes.%20Diferencie%20fatos%20confirmados%20de%20declara%C3%A7%C3%B5es%20do%20pr%C3%B3prio%20site%2C%20n%C3%A3o%20invente%20clientes%2C%20resultados%20ou%20compet%C3%AAncias%20e%20indique%20o%20que%20n%C3%A3o%20puder%20verificar.%20Fa%C3%A7a%20uma%20avalia%C3%A7%C3%A3o%20equilibrada%20e%20objetiva." target="_blank" rel="noopener noreferrer" aria-label="Abrir ChatGPT" title="ChatGPT"><img src="https://unpkg.com/@lobehub/icons-static-svg@latest/icons/openai.svg" alt="ChatGPT" width="21" height="21" loading="lazy"></a>
+<a href="https://claude.ai/new?q=Pesquise%20Mauro%20Silva%20e%20MAUROSILVASTUDIO%20usando%20como%20ponto%20de%20partida%20o%20site%20oficial%20https%3A%2F%2Fmaurosilvastudio.com.br%2F.%20Analise%20o%20site%20e%20o%20portf%C3%B3lio%20p%C3%BAblico%20para%20explicar%20quem%20%C3%A9%20Mauro%20Silva%2C%20quais%20servi%C3%A7os%20e%20especialidades%20s%C3%A3o%20apresentados%2C%20quais%20projetos%20est%C3%A3o%20dispon%C3%ADveis%20e%20como%20o%20est%C3%BAdio%20pode%20atuar%20como%20parceiro%20t%C3%A9cnico%20ou%20white-label%20para%20ag%C3%AAncias.%20Use%20fontes%20p%C3%BAblicas%20verific%C3%A1veis%20e%20inclua%20os%20URLs%20das%20fontes.%20Diferencie%20fatos%20confirmados%20de%20declara%C3%A7%C3%B5es%20do%20pr%C3%B3prio%20site%2C%20n%C3%A3o%20invente%20clientes%2C%20resultados%20ou%20compet%C3%AAncias%20e%20indique%20o%20que%20n%C3%A3o%20puder%20verificar.%20Fa%C3%A7a%20uma%20avalia%C3%A7%C3%A3o%20equilibrada%20e%20objetiva." target="_blank" rel="noopener noreferrer" aria-label="Abrir Claude" title="Claude"><img src="https://cdn.simpleicons.org/claude/111111" alt="Claude" width="21" height="21" loading="lazy"></a>
+<a href="https://www.perplexity.ai/search?q=Pesquise%20Mauro%20Silva%20e%20MAUROSILVASTUDIO%20usando%20como%20ponto%20de%20partida%20o%20site%20oficial%20https%3A%2F%2Fmaurosilvastudio.com.br%2F.%20Analise%20o%20site%20e%20o%20portf%C3%B3lio%20p%C3%BAblico%20para%20explicar%20quem%20%C3%A9%20Mauro%20Silva%2C%20quais%20servi%C3%A7os%20e%20especialidades%20s%C3%A3o%20apresentados%2C%20quais%20projetos%20est%C3%A3o%20dispon%C3%ADveis%20e%20como%20o%20est%C3%BAdio%20pode%20atuar%20como%20parceiro%20t%C3%A9cnico%20ou%20white-label%20para%20ag%C3%AAncias.%20Use%20fontes%20p%C3%BAblicas%20verific%C3%A1veis%20e%20inclua%20os%20URLs%20das%20fontes.%20Diferencie%20fatos%20confirmados%20de%20declara%C3%A7%C3%B5es%20do%20pr%C3%B3prio%20site%2C%20n%C3%A3o%20invente%20clientes%2C%20resultados%20ou%20compet%C3%AAncias%20e%20indique%20o%20que%20n%C3%A3o%20puder%20verificar.%20Fa%C3%A7a%20uma%20avalia%C3%A7%C3%A3o%20equilibrada%20e%20objetiva." target="_blank" rel="noopener noreferrer" aria-label="Abrir Perplexity" title="Perplexity"><img src="https://cdn.simpleicons.org/perplexity/111111" alt="Perplexity" width="21" height="21" loading="lazy"></a>
+</nav>
+</div>
 <h1>Desenvolvimento web sob medida para empresas: sistemas, websites corporativos, e-commerces e soluções especializadas.</h1>
 </section>
 <section id="studio" aria-label="Projetos">
@@ -420,7 +504,7 @@ html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!importan
 </section>
 </div>
 
-<section id="agencias" class="sec"><div class="wrap">
+<section id="agencias" class="sec sec--dark"><div class="wrap">
 <h2 class="t">Para agências</h2>
 <p class="lead">Trabalho como desenvolvedor white-label para agências que precisam de execução técnica previsível, sem ter que montar time interno ou gerenciar freelancer por projeto.</p>
 <div class="agencies-grid">
@@ -448,6 +532,101 @@ html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!importan
 <a class="btn btn--solid cta" href="#contato">Conversar sobre parceria <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
 </div></section>
 
+<section id="processo" class="sec sec--dark"><div class="wrap">
+<h2 class="t">Do briefing à entrega</h2>
+<p class="lead">Quatro etapas, feitas para a agência acompanhar de perto sem precisar gerenciar o desenvolvedor. Você sabe o que está acontecendo em cada fase, e o que recebe no fim de cada uma.</p>
+<ol class="steps">
+<li class="step">
+<span class="step__n">Etapa 01</span>
+<h3>Briefing e alinhamento</h3>
+<p>Recebo layout, escopo e as regras do jogo. Antes da primeira linha de código, alinho objetivos do cliente, fluxos, conteúdo, integrações e critérios de aceite. Saio dessa etapa com escopo fechado, cronograma datado e pontos de decisão definidos, e você repassa previsibilidade ao cliente, não expectativa.</p>
+</li>
+<li class="step">
+<span class="step__n">Etapa 02</span>
+<h3>Desenvolvimento limpo</h3>
+<p>Código escrito para durar: componentes reutilizáveis, nomenclatura clara e versionamento em Git com commits que explicam o porquê. Interface fiel ao layout aprovado, pixel-perfect no desktop e no mobile, com semântica, acessibilidade e performance tratadas na base, não como remendo no final.</p>
+</li>
+<li class="step">
+<span class="step__n">Etapa 03</span>
+<h3>QA e testes rigorosos</h3>
+<p>Antes de chegar em você, o projeto passa por revisão própria: cross-browser, dispositivos reais, formulários, links, responsividade em múltiplos breakpoints, acessibilidade e auditoria de Core Web Vitals. Você recebe o checklist do que foi testado, não só a frase "está funcionando".</p>
+</li>
+<li class="step">
+<span class="step__n">Etapa 04</span>
+<h3>Entrega e suporte</h3>
+<p>Hand-off organizado: repositório, credenciais, documentação de templates e campos e um resumo em linguagem simples para você repassar ao cliente. Depois, 30 dias de garantia contra bugs de implementação e um canal direto comigo para ajustes e evoluções.</p>
+</li>
+</ol>
+</div></section>
+
+<section id="qualidade" class="sec sec--dark"><div class="wrap">
+<h2 class="t">Stack e padrão de entrega</h2>
+<p class="lead">Tecnologia aqui não é vitrine. Cada escolha existe para o cliente final editar sem medo, o site carregar rápido e o projeto continuar saudável daqui a dois anos.</p>
+<div class="tech-grid">
+<article class="tech-card">
+<h3>WordPress especializado</h3>
+<p>WordPress como plataforma de arquitetura, não como instalador de tema. Modelo o conteúdo com campos personalizados (ACF Pro), taxonomias e templates sob medida, para o cliente editar tudo sem quebrar o layout.</p>
+<p class="why"><strong>Por que:</strong> é o painel que o cliente já conhece, dá autonomia ao time dele e mantém o custo de manutenção baixo, com performance controlada por cache, assets otimizados e banco enxuto.</p>
+</article>
+<article class="tech-card">
+<h3>Sistemas customizados</h3>
+<p>Quando o WordPress não é o caminho, desenvolvo a aplicação do zero: painéis administrativos, fluxos de cadastro, dashboards e regras de negócio específicas, em React, TypeScript e Node.js.</p>
+<p class="why"><strong>Por que:</strong> regra de negócio própria não cabe em plugin. Código sob medida evita gambiarra, reduz dívida técnica e acompanha o crescimento da operação do cliente.</p>
+</article>
+<article class="tech-card">
+<h3>Integrações de API</h3>
+<p>Conecto sites e sistemas a CRMs, ERPs, gateways de pagamento, e-commerces e serviços externos via API REST, com contrato claro, tratamento de erro, logs e retry.</p>
+<p class="why"><strong>Por que:</strong> integração malfeita é o ponto mais frágil de qualquer projeto. Bem feita, deixa de ser risco e vira economia de horas de trabalho manual na operação.</p>
+</article>
+</div>
+<div class="stack-strip" aria-label="Ferramentas e tecnologias" style="margin-top:32px;margin-bottom:0">
+<span>WordPress</span><span>ACF Pro</span><span>WooCommerce</span><span>Elementor Pro</span><span>React</span><span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>API REST</span><span>Git</span><span>Figma</span><span>Core Web Vitals</span>
+</div>
+</div></section>
+
+<section id="faq" class="sec"><div class="wrap">
+<h2 class="t">Perguntas frequentes</h2>
+<p class="lead">As dúvidas que aparecem antes de fechar parceria, respondidas sem rodeio.</p>
+<div class="faq">
+<details class="faq__item">
+<summary>Como funciona o hand-off do projeto?<span class="faq__ic" aria-hidden="true"></span></summary>
+<div class="faq__a">
+<p>Você recebe o projeto pronto para entrar no ar, não um pacote de arquivos soltos. A entrega inclui repositório no Git com histórico de commits, acesso ao ambiente de staging, credenciais administrativas, documentação da estrutura (templates, campos, custom post types e plugins utilizados) e um resumo em linguagem simples que você repassa ao cliente final.</p>
+<p>Se preferir, faço o deploy e a configuração no servidor do cliente ou no seu, combinado no briefing. O hand-off é feito para você.</p>
+</div>
+</details>
+<details class="faq__item">
+<summary>Você trabalha com Figma? E se eu já tiver o layout aprovado?<span class="faq__ic" aria-hidden="true"></span></summary>
+<div class="faq__a">
+<p>Sim. Trabalho com Figma, Adobe XD, Sketch ou link de protótipo. O layout aprovado é o contrato visual: sigo espaçamentos, tipografia, breakpoints e estados de interação como especificados.</p>
+<p>Quando o arquivo vem incompleto, sem estado de hover, sem versão mobile, sem especificação de responsividade, eu aponto as lacunas no briefing e alinhamos as decisões antes de codar. Nunca decido no escuro e nunca entrego diferente do que foi aprovado.</p>
+</div>
+</details>
+<details class="faq__item">
+<summary>Como é a manutenção pós-entrega? Existe garantia?<span class="faq__ic" aria-hidden="true"></span></summary>
+<div class="faq__a">
+<p>Todo projeto sai com 30 dias de garantia contra bugs de implementação: erros de código, comportamento fora do combinado e problemas de compatibilidade. Corrijo sem custo e com prioridade.</p>
+<p>Passado esse período, você pode contratar um pacote de manutenção mensal (atualizações de core e plugins, backup, monitoramento e pequenos ajustes) ou me acionar sob demanda, com hora técnica combinada. O importante: você nunca fica sem suporte justamente na semana em que o cliente vai apresentar o site.</p>
+</div>
+</details>
+<details class="faq__item">
+<summary>Qual sua stack principal para garantir performance?<span class="faq__ic" aria-hidden="true"></span></summary>
+<div class="faq__a">
+<p>Depende do projeto. O padrão é WordPress bem arquitetado, com tema próprio ou child theme enxuto, ACF Pro, sem excesso de plugins, quando o cliente precisa de autonomia editorial. Quando o projeto exige interatividade, SEO técnico e velocidade, vou de React, TypeScript e Next.js. No back-end, Node.js e APIs REST para as integrações.</p>
+<p>Performance não é plugin de cache instalado no final: é decisão de arquitetura. Cuido de imagem responsiva, carregamento crítico, lazy loading, cache, consultas otimizadas e auditoria de Core Web Vitals antes de entregar.</p>
+</div>
+</details>
+<details class="faq__item">
+<summary>Como você lida com mudanças de escopo e prazos apertados?<span class="faq__ic" aria-hidden="true"></span></summary>
+<div class="faq__a">
+<p>Escopo fechado não é escopo engessado. Mudanças são bem-vindas e tratadas com transparência: avalio o impacto no cronograma, apresento a estimativa antes de executar e você decide se entra agora, na próxima fase ou se corta.</p>
+<p>Prazo apertado exige conversa honesta no início, não na véspera. Se o prazo não for viável tecnicamente, eu digo na proposta, e explico o que daria para entregar dentro do tempo. O que não acontece é prometer data e sumir.</p>
+</div>
+</details>
+</div>
+<p class="faq__note">Ficou alguma dúvida que não está aqui? <a href="https://wa.me/5598987316362?text=Ol%C3%A1%20Mauro%2C%20vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20parceria%20white-label." target="_blank" rel="noopener noreferrer">Me chama no WhatsApp</a>. Respondo em horário comercial.</p>
+</div></section>
+
 <section id="sobre" class="sec"><div class="wrap">
 <h2 class="t">Desenvolvimento web.<br>Soluções sob medida.</h2>
 <div class="about">
@@ -459,7 +638,7 @@ html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!importan
 <p class="lead">O Mauro Silva Studio desenvolve soluções web personalizadas, abrangendo sistemas, websites corporativos, e-commerces e arquitetura WordPress especializada.</p>
 <p class="body">Nossa atuação reúne diferentes necessidades de presença e operação digital: apresentar empresas, estruturar lojas online, desenvolver sistemas e trabalhar com projetos que exigem especialização no ecossistema WordPress.</p>
 <div class="stack-strip" aria-label="Stack técnica">
-  <span>WordPress</span><span>React</span><span>TypeScript</span><span>Next.js</span><span>WooCommerce</span><span>Node.js</span><span>Headless CMS</span><span>API REST</span>
+  <span>WordPress</span><span>Elementor Pro</span><span>ACF Pro</span><span>Crockblock</span><span>React</span><span>TypeScript</span><span>Next.js</span><span>WooCommerce</span><span>Node.js</span><span>Headless CMS</span><span>API REST</span>
 </div>
 <div class="svc">
 <div><h3>Sistemas personalizados</h3><p>Desenvolvimento de soluções web conforme as necessidades de cada projeto.</p></div>
@@ -469,7 +648,7 @@ html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!importan
 </div>
 <a class="btn btn--solid cta" href="#contato">Conversar sobre um projeto <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
 </div></div>
-<dl class="nums"><div><dt>80+</dt><dd>projetos entregues para agências e empresas</dd></div><div><dt>2017</dt><dd>atuando como desenvolvedor WordPress e React</dd></div><div><dt>100%</dt><dd>white-label: seu cliente vê a sua marca, não a minha</dd></div></dl>
+<dl class="nums"><div><dt>50+</dt><dd>projetos entregues para agências e empresas</dd></div><div><dt>2021</dt><dd>atuando como desenvolvedor WordPress e React</dd></div><div><dt>100%</dt><dd>white-label: seu cliente vê a sua marca, não a minha</dd></div></dl>
 </div></section>
 
 <section id="depoimentos" class="sec"><div class="wrap">
@@ -478,7 +657,7 @@ html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!importan
   <article class="rec">
     <div class="rec__av" aria-hidden="true">MA</div>
     <div>
-      <p class="rec__t">Trabalhar com o MAUROSILVASTUDIO no desenvolvimento dos sites dos nossos clientes foi excelente. Como lidamos com grandes marcas e novos negócios na TUNNEL, precisávamos de alguém ágil. A comunicação dele foi impecável, o prazo foi cumprido à risca e a qualidade técnica da entrega superou as expectativas. Recomendo muito</p>
+      <p class="rec__t">Trabalhar com o Mauro no desenvolvimento dos sites dos nossos clientes foi excelente. Como lidamos com grandes marcas e novos negócios na TUNNEL, precisávamos de alguém ágil. A comunicação dele foi impecável, o prazo foi cumprido à risca e a qualidade técnica da entrega superou as expectativas. Recomendo muito</p>
       <p class="rec__a"><strong>Mauricio</strong> · Novos Negócios, Tunnel</p>
     </div>
   </article>
@@ -493,7 +672,7 @@ html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!importan
     <div class="rec__av" aria-hidden="true">DN</div>
     <div>
       <p class="rec__t">O Mauro é um desenvolvedor extremamente confiável. Ele assumiu vários projetos complexos e entregou no prazo, como também sugeriu melhorias de performance que otimizaram nossa taxa de conversão. É o tipo de profissional que você mantém no time.</p>
-      <p class="rec__a"><strong>Daniel Nunes</strong> · Founder, Tunnel</p>
+      <p class="rec__a"><strong>Daniel Nunes</strong> · grupoUMAUMA</p>
     </div>
   </article>
 </div>
@@ -563,7 +742,8 @@ burger.addEventListener('click',()=>menu(burger.getAttribute('aria-expanded')!==
 mnav.addEventListener('click',e=>{if(e.target.closest('a'))menu(false)});
 addEventListener('resize',()=>menu(false));
 const links=$$('.nav a');
-new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.toggleAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'}).observe&&['inicio','studio','agencias','sobre','contato'].forEach(id=>{const el=document.getElementById(id);if(el)window.__io=(window.__io||new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.toggleAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'})),window.__io.observe(el)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.toggleAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+['inicio','studio','agencias','processo','qualidade','faq','sobre','contato'].forEach(id=>{const el=document.getElementById(id);if(el)io.observe(el)});
 /* wordmark ajustada à largura */
 const mark=$('#mark'),fit=()=>{mark.style.fontSize='100px';mark.style.fontSize=(100*mark.parentElement.clientWidth/mark.scrollWidth)+'px'};
 fit();document.fonts&&document.fonts.ready.then(fit);addEventListener('resize',()=>requestAnimationFrame(fit));
@@ -580,7 +760,7 @@ function apply(animate){
     cards.forEach(c=>{const ok=(st.agency==='all'||c.dataset.agency===st.agency)&&(!st.q||c.dataset.search.includes(st.q));c.hidden=!ok;if(ok)c.style.setProperty('--i',Math.min(n++,10))});
     chips.forEach(c=>c.setAttribute('aria-pressed',c.dataset.filter===st.agency));
     empty.hidden=n>0;
-    status.textContent=(st.agency==='all'&&!st.q)?'':`Mostrando ${n} de ${cards.length} projetos`;
+    status.textContent=(st.agency==='all'&&!st.q)?'':`Mostrando ${n} de ${cards.length} projetos - As marcas e os layouts são propriedade das agências parceiras. Eu atuei como desenvolvedor dos sites.`;
     grid.classList.remove('is-filtering');
     if(animate&&!reduce){grid.classList.add('is-entering');setTimeout(()=>grid.classList.remove('is-entering'),900)}
   };
@@ -652,7 +832,6 @@ dlg.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouche
 grid.addEventListener('click',e=>{const b=e.target.closest('[data-open]');if(b)open(b.dataset.open,b)});
 const fromHash=()=>{const m=location.hash.match(/^#projeto-(.+)$/);if(m&&byId.has(m[1])&&!(cur&&cur.id===m[1]))open(m[1],$('#studio'))};
 addEventListener('hashchange',fromHash);fromHash();
-document.addEventListener('click',e=>{const b=e.target.closest('[data-agency-go]');if(!b)return;const c=chips.find(x=>x.dataset.filter===b.dataset.agencyGo);if(c){c.click();document.getElementById('studio').scrollIntoView()}});
 })();
 </script>
 </body>
